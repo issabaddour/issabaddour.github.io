@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Mini Apps</title>
+
+  <!-- Simple, self-contained styles (no external CSS) -->
+  <style>
+    :root {
+      --bg: #fdfdfd;
+      --fg: #1e293b;
+      --accent: #0d9488;
+      --card-bg: #ffffff;
+      --card-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --transition: 200ms ease;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --fg: #e2e8f0;
+        --card-bg: #1e293b;
+        --card-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      }
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    h1 {
+      margin-bottom: 1.25rem;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      width: 100%;
+      max-width: 960px;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      text-decoration: none;
+      color: inherit;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .card:hover, .card:focus-visible {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+    .card p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      opacity: 0.9;
+    }
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Welcome to My Mini Apps</h1>
+
+    <section class="grid">
+      <!-- Project 1 -->
+      <a class="card" href="chess-trainer/">
+        <h2>Chess Coordinate Trainer ⬡</h2>
+        <p>Practice naming squares on the chessboard—learn faster in Learning mode or test yourself in timed mode.</p>
+      </a>
+
+      <!-- Project 2 -->
+      <a class="card" href="new-app/">
+        <h2>New App 🚧</h2>
+        <p>A placeholder for my next web experiment. Check back soon!</p>
+      </a>
+
+      <!-- Add more cards as needed -->
+    </section>
+  </main>
+
+  <footer>
+    © 2025 issabaddour • Built with ♥ and GitHub Pages
+  </footer>
+</body>
+</html>
