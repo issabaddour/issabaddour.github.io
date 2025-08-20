@@ -1,102 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Mini Apps</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site Under Construction</title>
 
-  <!-- Simple, self-contained styles (no external CSS) -->
-  <style>
-    :root {
-      --bg: #fdfdfd;
-      --fg: #1e293b;
-      --accent: #0d9488;
-      --card-bg: #ffffff;
-      --card-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      --radius: 12px;
-      --transition: 200ms ease;
-      font-family: "Inter", system-ui, sans-serif;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f172a;
-        --fg: #e2e8f0;
-        --card-bg: #1e293b;
-        --card-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      }
-    }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-    h1 {
-      margin-bottom: 1.25rem;
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      text-align: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-      width: 100%;
-      max-width: 960px;
-    }
-    .card {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: var(--radius);
-      box-shadow: var(--card-shadow);
-      text-decoration: none;
-      color: inherit;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .card:hover, .card:focus-visible {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    }
-    .card h2 {
-      margin: 0 0 0.5rem;
-      font-size: 1.25rem;
-      color: var(--accent);
-    }
-    .card p {
-      margin: 0;
-      font-size: 0.95rem;
-      line-height: 1.45;
-      opacity: 0.9;
-    }
-    footer {
-      margin-top: 2.5rem;
-      font-size: 0.8rem;
-      opacity: 0.7;
-      text-align: center;
-    }
-  </style>
+<style>
+/* ---------- CSS RESET ---------- */
+*,*:before,*:after{box-sizing:border-box;margin:0;padding:0;font:inherit}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+     display:flex;flex-direction:column;align-items:center;justify-content:center;
+     min-height:100vh;background:#0f172a;color:#f1f5f9;text-align:center;
+     line-height:1.45;padding:2rem}
+/* ---------- COLORS ---------- */
+:root{
+  --yellow:#facc15; --orange:#fb923c; --dark:#0f172a; --stone:#334155;
+}
+/* ---------- HEADLINE ---------- */
+h1{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;margin-bottom:.75rem}
+p.lead{color:#94a3b8;font-size:1.05rem;margin-bottom:2rem}
+/* ---------- ANIMATED EXCAVATOR ---------- */
+.excavator{position:relative;width:120px;height:80px;margin-bottom:3rem}
+.cab{width:50px;height:40px;background:var(--orange);border-radius:4px 4px 2px 2px;position:absolute;left:0;top:20px}
+.arm{width:70px;height:8px;background:var(--yellow);position:absolute;left:50px;top:35px;transform-origin:left center;animation:swing 4s infinite ease-in-out}
+@keyframes swing{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(25deg)}}
+.bucket{width:22px;height:16px;background:var(--yellow);position:absolute;right:-18px;top:-4px;border-radius:2px}
+.track{width:120px;height:18px;background:var(--stone);border-radius:9px;position:absolute;bottom:0;left:0;overflow:hidden}
+.track:before{content:"";position:absolute;inset:3px;background:repeating-linear-gradient(90deg,#64748b 0 10px,transparent 10px 20px);animation:scroll 2s linear infinite}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-20px)}}
+/* ---------- COUNTDOWN ---------- */
+.countdown{display:flex;gap:1.5rem;font-weight:600;font-size:1.3rem;margin-bottom:2.5rem}
+.countdown div{display:flex;flex-direction:column;min-width:65px}
+.countdown span.num{font-size:2rem;color:var(--yellow)}
+/* ---------- FOOTER ---------- */
+footer{font-size:.8rem;color:#64748b}
+a{color:var(--yellow);text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
 </head>
 <body>
-  <main>
-    <h1>Welcome to My Mini Apps</h1>
-<!-- 
-    <section class="grid">
-      <!-- Project 1 -->
-      <a class="card" href="chess/">
-        <h2>Chess Coordinate Trainer ⬡</h2>
-        <p>Practice naming squares on the chessboard—learn faster in Learning mode or test yourself in timed mode.</p>
-      </a>
- -->
-      <!-- Add more cards as needed -->
-    </section>
-  </main>
 
-  <footer>
-    © 2025 issabaddour • Built with ♥ and GitHub Pages
-  </footer>
+<h1>🚧 Site Under Construction 🚧</h1>
+<p class="lead">Great things are on their way. Check back soon!</p>
+
+<div class="excavator" aria-hidden="true">
+  <div class="cab"></div>
+  <div class="arm"><div class="bucket"></div></div>
+  <div class="track"></div>
+</div>
+
+<div class="countdown" id="cd">
+  <div><span class="num" id="d">0</span>Days</div>
+  <div><span class="num" id="h">0</span>Hours</div>
+  <div><span class="num" id="m">0</span>Minutes</div>
+  <div><span class="num" id="s">0</span>Seconds</div>
+</div>
+
+<footer>© 2025 your-username • Hosted on <a href="https://pages.github.com/">GitHub Pages</a></footer>
+
+<script>
+/* ---------- COUNTDOWN TIMER (set launchDate below) ---------- */
+const launchDate = new Date().getTime() + 1000*60*60*24*14; // 14 days from now
+const els = {d:document.getElementById('d'),h:document.getElementById('h'),
+             m:document.getElementById('m'),s:document.getElementById('s')};
+function tick(){
+  const now = Date.now(), diff = Math.max(0, launchDate - now);
+  const d = Math.floor(diff/864e5),
+        h = Math.floor(diff/36e5)%24,
+        m = Math.floor(diff/6e4)%60,
+        s = Math.floor(diff/1e3)%60;
+  els.d.textContent=d; els.h.textContent=h; els.m.textContent=m; els.s.textContent=s;
+  if(diff>0) setTimeout(tick,1000);
+}
+tick();
+</script>
+
 </body>
 </html>
