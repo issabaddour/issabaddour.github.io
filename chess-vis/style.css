@@ -1,0 +1,7 @@
+body{font-family:Helvetica,Arial,sans-serif;text-align:center;margin-top:20px}
+h1{margin-bottom:20px}
+.buttons{margin-top:15px}
+button{margin:0 6px 8px;padding:6px 12px;font-size:14px;cursor:pointer}
+.square-blue{background:rgba(66,133,244,0.6)!important}
+.square-red{background:rgba(219,68,55,0.6)!important}
+.square-purple{background:rgba(123,31,162,0.65)!important}
