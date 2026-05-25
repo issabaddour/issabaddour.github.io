@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coming Soon</title>
+
+<style>
+/* ---- THEME ---- */
+:root{
+  --bg:#0f172a;          /* slate-900 */
+  --fg:#e2e8f0;          /* slate-200 */
+  --accent:#38bdf8;      /* sky-400 */
+  --gear:#facc15;        /* amber-400 */
+  font-family: "Inter",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f8fafc; --fg:#0f172a; }
+}
+
+/* ---- LAYOUT ---- */
+body{
+  margin:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; min-height:100vh;
+  background:var(--bg); color:var(--fg); text-align:center; padding:2rem;
+}
+h1{font-size:clamp(2rem,6vw,3rem); margin-bottom:0.5rem;}
+p.lead{opacity:0.75; font-size:1.05rem; margin-bottom:3rem;}
+
+/* ---- GEAR ANIMATION ---- */
+.gearbox{
+  position:relative; width:140px; height:140px;
+  display:inline-flex; align-items:center; justify-content:center;
+}
+.gear{
+  --size:80px;
+  width:var(--size); height:var(--size);
+  border-radius:50%; background:var(--gear);
+  position:relative; animation:spin 8s linear infinite;
+}
+.gear:before, .gear:after{
+  content:""; position:absolute; inset:0;
+  border-radius:inherit; background:radial-gradient(circle at center,transparent 36%,rgba(0,0,0,0.12) 37%);
+}
+/* teeth */
+.gear div{
+  position:absolute; width:20px; height:12px; background:var(--gear);
+}
+.gear div:nth-child(1){top:-6px; left:50%; transform:translateX(-50%);}
+.gear div:nth-child(2){right:-6px; top:50%; transform:translateY(-50%) rotate(90deg);}
+.gear div:nth-child(3){bottom:-6px; left:50%; transform:translateX(-50%) rotate(180deg);}
+.gear div:nth-child(4){left:-6px; top:50%; transform:translateY(-50%) rotate(90deg);}
+/* subtle inner gear */
+.gear.small{
+  --size:40px; background:var(--accent); position:absolute;
+  animation:spinReverse 5s linear infinite;
+}
+/* keyframes */
+@keyframes spin{ from{transform:rotate(0)} to{transform:rotate(360deg)} }
+@keyframes spinReverse{ from{transform:rotate(0)} to{transform:rotate(-360deg)} }
+
+/* ---- FOOTER ---- */
+footer{margin-top:3rem; font-size:0.8rem; opacity:0.6;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<h1>Site Under Construction</h1>
+<p class="lead"> Please check back soon!</p>
+
+<div class="gearbox" aria-hidden="true">
+  <div class="gear">
+    <div></div><div></div><div></div><div></div>
+  </div>
+  <div class="gear small">
+    <div></div><div></div><div></div><div></div>
+  </div>
+</div>
+
+<footer>© 2025 IssaBaddour • Powered by GitHub Pages</footer>
+
+</body>
+</html>
