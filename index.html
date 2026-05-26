@@ -111,7 +111,7 @@
 
 <header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-sm px-gutter flex justify-center items-center h-16 border-b border-outline-variant">
 <div class="max-w-container-max w-full flex justify-between items-center">
-<a class="font-headline-md text-headline-md font-bold text-primary" href="#">Issa baddour</a>
+<a class="font-headline-md text-headline-md font-bold text-primary" href="#">Issa Baddour</a>
 <nav class="hidden md:flex items-center space-x-8">
 <a class="font-label-caps text-label-caps text-primary font-bold border-b-2 border-primary pb-1" href="#">Home</a>
 <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#research">Research</a>
@@ -120,8 +120,6 @@
 <!-- <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#cv">CV</a> -->
 <!-- <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a> 
  -->
-    <!-- Paste this anywhere in your <head> -->
-<script async src="https://cdn.counter.dev/script.js" data-id="a88f7746-35c3-4814-9e58-48ec6c0e9e2f" data-utcoffset="5.5"></script>
 </nav>
 <a href="#contact" class="bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps rounded transition-all hover:opacity-90">Contact Me</a>
 </div>
@@ -461,12 +459,46 @@
 </div>
 </section>
 
+
 <!-- Contact -->
 <section class="bg-primary text-on-primary py-section-gap" id="contact">
 <div class="max-w-container-max mx-auto px-gutter text-center">
 <span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest">Get in touch</span>
 <!-- <h2 class="font-headline-lg text-headline-lg mt-4 mb-6">Seeking Postdoctoral Positions (2026)</h2> -->
-<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-<a class="flex items-center gap-3 text-headline-md font-display hover:underline underline-offset-8" href="mailto:baddour.1@iitj.ac.in">
-<span class="material-symbols-outlined">mail</span> baddour.1 [at] iitj.ac.in
-                    </a>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center mt-6">
+    <div class="flex items-center gap-3 text-headline-md font-display">
+        <span class="material-symbols-outlined">mail</span> baddour.1 [at] iitj.ac.in
+    </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#091426] text-white py-6">
+    <div class="max-w-container-max mx-auto px-gutter text-center">
+        <div class="flex justify-center mb-4">
+            <div class="inline-flex items-center gap-3 px-5 py-2 bg-[#091426]/80 backdrop-blur-sm rounded-full border border-white/20">
+                <span class="material-symbols-outlined text-white/80 text-base">public</span>
+                <span class="text-white/80 text-sm font-medium tracking-wide">visits</span>
+                <div class="w-px h-4 bg-white/20 mx-1"></div>
+                <img
+                    src="https://hitcount.dev/p/issabaddour/https://github.com/issabaddour/issabaddour.github.io.svg?label=&labelColor=091426&countColor=091426"
+                    alt="Hit Counter"
+                    class="h-5 w-auto brightness-110">
+            </div>
+        </div>
+        <p class="text-white/40 text-xs">
+            © 2026 Issa Baddour | Last updated:
+            <span id="last-updated"></span>
+        </p>
+    </div>
+</footer>
+
+<script>
+// Show only Month Year (e.g., "May 2026")
+document.getElementById('last-updated') && 
+    (document.getElementById('last-updated').innerText = new Date(document.lastModified).toLocaleDateString('en-US', { 
+        month: 'long', 
+        year: 'numeric' 
+    }));
+</script>
+
