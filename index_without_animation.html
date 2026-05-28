@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-
-<html class="light scroll-smooth" lang="en" style=""><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Issa Baddour | PhD Candidate in GPU Security &amp; AI Infrastructure</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script>
       tailwind.config = {
         darkMode: "class",
@@ -121,66 +119,32 @@
         background-color: #091426;
         transition: width 0.3s ease;
       }
-      .nav-link:hover::after, .nav-link.active::after {
+      .nav-link:hover::after {
         width: 100%;
       }
 
       .hover-lift {
-        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
       }
       .hover-lift:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12), 0 10px 15px -10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
       }
 
       /* Scroll Animation Classes */
       .reveal {
         opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
       }
       .reveal.active {
         opacity: 1;
         transform: translateY(0);
       }
-      
-      /* Staggered Delay Helpers */
-      .reveal.stagger-1 { transition-delay: 0.1s; }
-      .reveal.stagger-2 { transition-delay: 0.2s; }
-      .reveal.stagger-3 { transition-delay: 0.3s; }
-      .reveal.stagger-4 { transition-delay: 0.4s; }
-      .reveal.stagger-5 { transition-delay: 0.5s; }
-      .reveal.stagger-6 { transition-delay: 0.6s; }
-      .reveal.stagger-7 { transition-delay: 0.7s; }
-      .reveal.stagger-8 { transition-delay: 0.8s; }
 
-      /* Hero Glow - Dynamic */
+      /* Hero Glow */
       .hero-glow {
-        background: radial-gradient(
-          circle at var(--mouse-x, 70%) var(--mouse-y, 30%), 
-          rgba(216, 227, 251, 0.5) 0%, 
-          rgba(247, 249, 251, 0) 60%
-        );
-        transition: background 0.1s ease-out;
-      }
-
-      /* Particle Background */
-      .particle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        pointer-events: none;
-        animation: float-up var(--duration) linear infinite;
-        opacity: 0;
-      }
-
-      @keyframes float-up {
-        0% { transform: translateY(100%) translateX(0); opacity: 0; }
-        10% { opacity: 0.4; }
-        90% { opacity: 0.4; }
-        100% { transform: translateY(-100%) translateX(var(--drift)); opacity: 0; }
+        background: radial-gradient(circle at 70% 30%, rgba(216, 227, 251, 0.4) 0%, rgba(247, 249, 251, 0) 60%);
       }
     </style>
 <script data-id="a88f7746-35c3-4814-9e58-48ec6c0e9e2f" data-utcoffset="6" src="https://cdn.counter.dev/script.js"></script>
@@ -189,8 +153,8 @@
 <header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-sm px-gutter flex justify-center items-center h-16 border-b border-outline-variant">
 <div class="max-w-container-max w-full flex justify-between items-center">
 <a class="font-headline-md text-headline-md font-bold text-primary" href="#">Issa Baddour</a>
-<nav class="hidden md:flex items-center space-x-8" id="main-nav">
-<a class="nav-link font-label-caps text-label-caps text-primary font-bold active" href="#">Home</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="nav-link font-label-caps text-label-caps text-primary font-bold border-b-2 border-primary" href="#">Home</a>
 <a class="nav-link font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#research">Research</a>
 <a class="nav-link font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#publications">Publications</a>
 <a class="nav-link font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a><a class="nav-link font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#cv">Education</a>
@@ -200,22 +164,22 @@
 </header>
 <main class="pt-16 overflow-hidden">
 <!-- Hero Section -->
-<section class="hero-glow" id="hero">
-<div class="max-w-container-max mx-auto px-gutter py-section-gap grid grid-cols-1 md:grid-cols-12 gap-12 items-center reveal">
+<section class="hero-glow">
+<div class="max-w-container-max mx-auto px-gutter py-section-gap grid grid-cols-1 md:grid-cols-12 gap-12 items-center reveal active opacity-0">
 <div class="md:col-span-7 space-y-stack-md">
 <div class="space-y-4">
-<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block reveal stagger-1">PhD Candidate • IIT Jodhpur</span>
-<h1 class="font-display text-display text-primary leading-tight reveal stagger-2">Issa Baddour</h1>
-<h2 class="font-headline-md text-headline-md text-secondary leading-relaxed reveal stagger-3">GPU Security | Microarchitectural Side Channels | AI Infrastructure</h2>
-<div class="flex flex-wrap gap-2 mt-3 reveal stagger-4">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">PhD Candidate • IIT Jodhpur</span>
+<h1 class="font-display text-display text-primary leading-tight">Issa Baddour</h1>
+<h2 class="font-headline-md text-headline-md text-secondary leading-relaxed">GPU Security | Microarchitectural Side Channels | AI Infrastructure</h2>
+<div class="flex flex-wrap gap-2 mt-3">
 <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">📢 Seeking Postdoc Positions (2026)</span>
 <span class="bg-tertiary-fixed text-tertiary-container px-3 py-1 rounded-full text-sm">Open to Collaborate</span>
 </div>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mt-4 leading-relaxed reveal stagger-5">
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mt-4 leading-relaxed">
                         My research exposes and mitigates information leakage in GPU systems across three layers: microarchitectural resources, interconnect fabrics (NVLink), and LLM inference. I'm now seeking postdoctoral positions to advance <strong>security of AI infrastructure</strong>.
                     </p>
 </div>
-<p class="text-on-surface-variant mt-2 reveal stagger-6">
+<p class="text-on-surface-variant mt-2">
     Advised by
     <a class="text-sky-700 hover:text-sky-900 inline-flex items-center gap-1 transition-colors" href="https://somitra-sanadhya.github.io/" rel="noopener noreferrer" target="_blank">
        Prof. Somitra Kumar Sanadhya
@@ -227,7 +191,7 @@
        <span class="material-symbols-outlined text-sm">open_in_new</span>
 </a>
 </p>
-<div class="flex flex-wrap gap-4 pt-4 reveal stagger-7">
+<div class="flex flex-wrap gap-4 pt-4">
 <a class="flex items-center gap-2 border border-outline px-6 py-3 font-label-caps text-label-caps text-primary hover:bg-surface-container-low transition-all rounded-xl" href="https://scholar.google.com/citations?user=Lo16oyMAAAAJ&amp;hl=en" target="_blank">
 <span class="material-symbols-outlined">school</span> Google Scholar
                     </a>
@@ -239,50 +203,49 @@
                     </a>
 </div>
 </div>
-<div class="md:col-span-5 flex justify-center reveal stagger-4">
+<div class="md:col-span-5 flex justify-center">
 <div class="relative w-full max-w-[400px] aspect-square rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-<img alt="Issa Baddour" class="w-full h-full object-cover" src="profile.jpg"/>
+<img alt="Issa Baddour" class="w-full h-full object-cover" src="profile.jpg">
 <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl"></div>
 </div>
 </div>
 </div>
 </section>
 <!-- Research Vision -->
-<section class="bg-primary text-on-primary py-section-gap relative overflow-hidden">
-<!-- Particles -->
-<div class="absolute inset-0 pointer-events-none" id="particle-container"></div>
-<div class="max-w-container-max mx-auto px-gutter text-center relative z-10 reveal">
-<span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest block mb-4">Research Vision</span>
-<h2 class="font-headline-lg text-headline-lg mb-6">Securing the AI Infrastructure Stack</h2>
+<section class="bg-primary text-on-primary py-section-gap reveal active opacity-0">
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest">Research Vision</span>
+<h2 class="font-headline-lg text-headline-lg mt-4 mb-6">Securing the AI Infrastructure Stack</h2>
 <p class="font-body-lg max-w-3xl mx-auto opacity-90 leading-relaxed">
                         My postdoctoral research will focus on building <strong>observability-aware security mechanisms</strong> for AI infrastructure—designing GPU systems where performance and confidentiality coexist. I aim to develop isolation primitives for multi-tenant AI clusters, addressing vulnerabilities that emerge when LLM inference, microarchitectural contention, and high-speed interconnects intersect.
                     </p>
 </div>
 </section>
 <!-- Metrics Strip -->
+
 <!-- Research Interests -->
-<section class="bg-surface-container-lowest py-section-gap" id="research">
+<section class="bg-surface-container-lowest py-section-gap reveal active opacity-0" id="research">
 <div class="max-w-container-max mx-auto px-gutter">
-<div class="mb-element-gap text-center md:text-left reveal">
+<div class="mb-element-gap text-center md:text-left">
 <span class="font-label-caps text-label-caps text-secondary">Expertise</span>
 <h2 class="font-headline-lg text-headline-lg text-primary mt-2">Research Interests</h2>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-1"><span class="material-symbols-outlined text-secondary">memory</span><h3 class="font-body-md font-bold text-primary mt-2">GPU Security</h3></div>
-<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-2"><span class="material-symbols-outlined text-secondary">security</span><h3 class="font-body-md font-bold text-primary mt-2">Microarchitectural Side Channels</h3></div>
-<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-3"><span class="material-symbols-outlined text-secondary">vitals</span><h3 class="font-body-md font-bold text-primary mt-2">Covert Channels</h3></div>
-<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-4"><span class="material-symbols-outlined text-secondary">hub</span><h3 class="font-body-md font-bold text-primary mt-2">NVLink / Interconnect Security</h3></div>
-<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-5"><span class="material-symbols-outlined text-secondary">psychology</span><h3 class="font-body-md font-bold text-primary mt-2">LLM Inference Security</h3></div>
-<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-6"><span class="material-symbols-outlined text-secondary">query_stats</span><h3 class="font-body-md font-bold text-primary mt-2">Side-Channel Analysis</h3></div>
-<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-7"><span class="material-symbols-outlined text-secondary">hardware</span><h3 class="font-body-md font-bold text-primary mt-2">Trusted Execution Environments</h3></div>
-<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-8"><span class="material-symbols-outlined text-secondary">speed</span><h3 class="font-body-md font-bold text-primary mt-2">High-Performance Computing</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl"><span class="material-symbols-outlined text-secondary">memory</span><h3 class="font-body-md font-bold text-primary mt-2">GPU Security</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl"><span class="material-symbols-outlined text-secondary">security</span><h3 class="font-body-md font-bold text-primary mt-2">Microarchitectural Side Channels</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl"><span class="material-symbols-outlined text-secondary">vitals</span><h3 class="font-body-md font-bold text-primary mt-2">Covert Channels</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl"><span class="material-symbols-outlined text-secondary">hub</span><h3 class="font-body-md font-bold text-primary mt-2">NVLink / Interconnect Security</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl"><span class="material-symbols-outlined text-secondary">psychology</span><h3 class="font-body-md font-bold text-primary mt-2">LLM Inference Security</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl"><span class="material-symbols-outlined text-secondary">query_stats</span><h3 class="font-body-md font-bold text-primary mt-2">Side-Channel Analysis</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl"><span class="material-symbols-outlined text-secondary">hardware</span><h3 class="font-body-md font-bold text-primary mt-2">Trusted Execution Environments</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl"><span class="material-symbols-outlined text-secondary">speed</span><h3 class="font-body-md font-bold text-primary mt-2">High-Performance Computing</h3></div>
 </div>
 </div>
 </section>
 <!-- PhD Thesis Highlight -->
-<section class="max-w-container-max mx-auto px-gutter py-section-gap">
+<section class="max-w-container-max mx-auto px-gutter py-section-gap reveal active opacity-0">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-<div class="reveal">
+<div>
 <span class="font-label-caps text-label-caps text-secondary">Core Contribution</span>
 <h2 class="font-headline-lg text-headline-lg text-primary mt-2">PhD Thesis: Cross-Layer GPU Information Leakage</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mt-6 leading-relaxed">
@@ -290,15 +253,15 @@
                     </p>
 </div>
 <div class="space-y-4">
-<div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-2">
+<div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant">
 <h3 class="font-body-md font-bold text-primary mb-1">🔬 Microarchitectural Layer: 44.7 Mbps covert channel</h3>
 <p class="font-body-sm text-secondary leading-relaxed">Reverse-engineered warp scheduling on NVIDIA A100; 10x improvement over prior work. Randomization reduces ML detectability to 36%.</p>
 </div>
-<div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-3">
+<div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant">
 <h3 class="font-body-md font-bold text-primary mb-1">🔗 Interconnect Layer: NVLink attack surface</h3>
 <p class="font-body-sm text-secondary leading-relaxed">First to expose NVLink across V100/A100/H200. Covert channel: 6.33–9.90 Kbps. Side-channel fingerprinting: 96.2% accuracy (25 apps).</p>
 </div>
-<div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-4">
+<div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant">
 <h3 class="font-body-md font-bold text-primary mb-1">🤖 Application Layer: LLM inference leakage</h3>
 <p class="font-body-sm text-secondary leading-relaxed">Model fingerprinting: 99.94% accuracy (7 LLMs). Prompt-family inference: 81–100% accuracy under realistic stochastic decoding.</p>
 </div>
@@ -306,9 +269,9 @@
 </div>
 </section>
 <!-- Publications -->
-<section class="bg-surface-container-low py-section-gap" id="publications">
+<section class="bg-surface-container-low py-section-gap reveal active opacity-0" id="publications">
 <div class="max-w-container-max mx-auto px-gutter">
-<div class="flex flex-col md:flex-row md:justify-between md:items-end mb-element-gap gap-4 reveal">
+<div class="flex flex-col md:flex-row md:justify-between md:items-end mb-element-gap gap-4">
 <div>
 <span class="font-label-caps text-label-caps text-secondary">Academic Record</span>
 <h2 class="font-headline-lg text-headline-lg text-primary mt-2">Selected Publications</h2>
@@ -319,9 +282,9 @@
 </div>
 </div>
 <!-- 2026 -->
-<div class="mb-10 reveal">
+<div class="mb-10">
 <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2026 <span class="h-px flex-1 bg-outline-variant"></span></h3>
-<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl">
 <div class="flex justify-between items-start gap-4 flex-wrap">
 <div class="max-w-2xl">
 <h4 class="font-body-md font-bold text-primary mb-1">SideLink: Exposing NVLink to Covert and Side-Channel Attacks</h4>
@@ -335,9 +298,9 @@
 </div>
 </div>
 <!-- 2025 -->
-<div class="mb-10 reveal">
+<div class="mb-10">
 <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2025 <span class="h-px flex-1 bg-outline-variant"></span></h3>
-<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl">
 <div class="flex justify-between items-start gap-4 flex-wrap">
 <div class="max-w-2xl">
 <h4 class="font-body-md font-bold text-primary mb-1">An Improved Micro-Architectural Covert-Channel Attack on GPUs</h4>
@@ -351,9 +314,9 @@
 </div>
 </div>
 <!-- 2024 -->
-<div class="mb-10 reveal">
+<div class="mb-10">
 <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2024 <span class="h-px flex-1 bg-outline-variant"></span></h3>
-<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl">
 <div class="flex justify-between items-start gap-4 flex-wrap">
 <div class="max-w-2xl">
 <h4 class="font-body-md font-bold text-primary mb-1">SideLink: Exposing NVLink to Covert and Side-Channel Attacks (Work-in-Progress)</h4>
@@ -367,9 +330,9 @@
 </div>
 </div>
 <!-- Under Submission -->
-<div class="reveal">
+<div>
 <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">Under Submission <span class="h-px flex-1 bg-outline-variant"></span></h3>
-<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl">
 <h4 class="font-body-md font-bold text-primary mb-1">Side-Channel Leakage in Large Language Model Inference on GPUs</h4>
 <p class="font-body-sm text-on-surface-variant leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
 <p class="font-body-sm text-secondary mt-2 leading-relaxed max-w-2xl">Demonstrates side-channel leakage in LLM inference across 7 models (OPT, Mistral, Phi-2, Qwen2, TinyLlama, Falcon) with stochastic decoding. Model fingerprinting: 99.94% accuracy.</p>
@@ -378,13 +341,11 @@
 </div>
 </section>
 <!-- Projects -->
-<section class="max-w-container-max mx-auto px-gutter py-section-gap" id="projects">
-<div class="reveal">
+<section class="max-w-container-max mx-auto px-gutter py-section-gap reveal active opacity-0" id="projects">
 <span class="font-label-caps text-label-caps text-secondary">Technical Contributions</span>
 <h2 class="font-headline-lg text-headline-lg text-primary mt-2 mb-6">Research Projects</h2>
-</div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="bg-surface border border-outline-variant p-6 hover-lift rounded-2xl reveal stagger-1">
+<div class="bg-surface border border-outline-variant p-6 hover-lift rounded-2xl">
 <h3 class="font-body-md font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined text-secondary">speed</span> Execution-Level Covert Channels</h3>
 <ul class="mt-3 space-y-2 text-sm text-on-surface-variant list-disc pl-4 leading-relaxed">
 <li class="">44.7 Mbps single-GPU, 340.5 Mbps 8-GPU covert channels</li>
@@ -392,7 +353,7 @@
 <li class="">Four-level encoding + ML evasion (64% evasion rate)</li>
 </ul>
 </div>
-<div class="bg-surface border border-outline-variant p-6 hover-lift rounded-2xl reveal stagger-2">
+<div class="bg-surface border border-outline-variant p-6 hover-lift rounded-2xl">
 <h3 class="font-body-md font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined text-secondary">hub</span> NVLink Side-Channel Analysis</h3>
 <ul class="mt-3 space-y-2 text-sm text-on-surface-variant list-disc pl-4 leading-relaxed">
 <li class="">First cross-generation attack (V100, A100, H200)</li>
@@ -400,7 +361,7 @@
 <li class="">Side-channel fingerprinting: 96.2% accuracy (25 apps)</li>
 </ul>
 </div>
-<div class="bg-surface border border-outline-variant p-6 hover-lift rounded-2xl reveal stagger-3">
+<div class="bg-surface border border-outline-variant p-6 hover-lift rounded-2xl">
 <h3 class="font-body-md font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined text-secondary">psychology</span> LLM Inference Leakage</h3>
 <ul class="mt-3 space-y-2 text-sm text-on-surface-variant list-disc pl-4 leading-relaxed">
 <li class="">Model fingerprinting: 99.94% across 7 LLMs</li>
@@ -411,26 +372,26 @@
 </div>
 </section>
 <!-- Education & Experience -->
-<section class="bg-surface-container-highest py-section-gap" id="cv">
+<section class="bg-surface-container-highest py-section-gap reveal active opacity-0" id="cv">
 <div class="max-w-container-max mx-auto px-gutter">
-<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-12 reveal">Education &amp; Experience</h2>
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-12">Education &amp; Experience</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 <!-- Education -->
 <div>
-<h3 class="font-headline-md text-headline-md text-primary mb-6 reveal">Education</h3>
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Education</h3>
 <div class="space-y-6">
-<div class="pl-5 border-l-2 border-outline-variant reveal stagger-1">
+<div class="pl-5">
 <span class="font-label-caps text-label-caps text-secondary">2021 – Present (Expected 2026)</span>
 <h4 class="font-body-md font-bold text-primary">Indian Institute of Technology, Jodhpur</h4>
 <p class="font-body-sm text-secondary">PhD in Computer Science &amp; Engineering | GPA: 9.25/10</p>
-<p class="font-body-sm text-on-surface-variant mt-2 leading-relaxed max-w-md">Thesis: Information Leakage in GPU Systems: From Microarchitectural Contention to AI Inference<br/>Supervisors: Dr. Somitra Kumar Sanadhya, Dr. Dip Sankar Banerjee</p>
+<p class="font-body-sm text-on-surface-variant mt-2 leading-relaxed max-w-md">Thesis: Information Leakage in GPU Systems: From Microarchitectural Contention to AI Inference<br>Supervisors: Dr. Somitra Kumar Sanadhya, Dr. Dip Sankar Banerjee</p>
 </div>
-<div class="pl-5 border-l-2 border-outline-variant reveal stagger-2">
+<div class="pl-5">
 <span class="font-label-caps text-label-caps text-secondary">2018 – 2020</span>
 <h4 class="font-body-md font-bold text-primary">National Institute of Technology, Warangal</h4>
 <p class="font-body-sm text-secondary">M.Tech in Computer Science &amp; Engineering</p>
 </div>
-<div class="pl-5 border-l-2 border-outline-variant reveal stagger-3">
+<div class="pl-5">
 <span class="font-label-caps text-label-caps text-secondary">2011 – 2016</span>
 <h4 class="font-body-md font-bold text-primary">Damascus University, Syria</h4>
 <p class="font-body-sm text-secondary">B.E. in Computer Engineering | Ranked 1st in class (Gold-medalist equivalent)</p>
@@ -439,9 +400,9 @@
 </div>
 <!-- Experience & Teaching -->
 <div>
-<h3 class="font-headline-md text-headline-md text-primary mb-6 reveal">Teaching</h3>
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Teaching</h3>
 <div class="space-y-5">
-<div class="reveal stagger-1">
+<div>
 <h4 class="font-body-md font-bold text-primary">Teaching Assistant</h4>
 <ul class="mt-1 space-y-2 text-sm text-on-surface-variant list-disc pl-4 leading-relaxed">
 <li class="">Algorithms for Big Data — IIT Jodhpur (2023, 2024)</li>
@@ -455,35 +416,35 @@
 </div>
 </section>
 <!-- Skills -->
-<section class="max-w-container-max mx-auto px-gutter py-section-gap">
-<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-10 reveal">Technical Skills</h2>
+<section class="max-w-container-max mx-auto px-gutter py-section-gap reveal active opacity-0">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-10">Technical Skills</h2>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-1"><h3 class="font-label-caps text-label-caps text-primary mb-3">Languages</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">C/C++</span><span class="skill-badge px-2 py-1 text-xs rounded-full">CUDA</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Python</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Bash</span><span class="skill-badge px-2 py-1 text-xs rounded-full">SQL</span></div></div>
-<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-2"><h3 class="font-label-caps text-label-caps text-primary mb-3">GPU Systems</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">CUDA Kernels</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Streams</span><span class="skill-badge px-2 py-1 text-xs rounded-full">NVLink</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Multi-GPU</span></div></div>
-<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-3"><h3 class="font-label-caps text-label-caps text-primary mb-3">Profiling</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">Nsight Systems</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Nsight Compute</span><span class="skill-badge px-2 py-1 text-xs rounded-full">CUPTI</span><span class="skill-badge px-2 py-1 text-xs rounded-full">NVTX</span></div></div>
-<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-4"><h3 class="font-label-caps text-label-caps text-primary mb-3">Cloud &amp; Systems</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">Docker</span><span class="skill-badge px-2 py-1 text-xs rounded-full">K8s</span><span class="skill-badge px-2 py-1 text-xs rounded-full">AWS (EC2/S3)</span></div></div>
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl"><h3 class="font-label-caps text-label-caps text-primary mb-3">Languages</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">C/C++</span><span class="skill-badge px-2 py-1 text-xs rounded-full">CUDA</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Python</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Bash</span><span class="skill-badge px-2 py-1 text-xs rounded-full">SQL</span></div></div>
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl"><h3 class="font-label-caps text-label-caps text-primary mb-3">GPU Systems</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">CUDA Kernels</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Streams</span><span class="skill-badge px-2 py-1 text-xs rounded-full">NVLink</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Multi-GPU</span></div></div>
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl"><h3 class="font-label-caps text-label-caps text-primary mb-3">Profiling</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">Nsight Systems</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Nsight Compute</span><span class="skill-badge px-2 py-1 text-xs rounded-full">CUPTI</span><span class="skill-badge px-2 py-1 text-xs rounded-full">NVTX</span></div></div>
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl"><h3 class="font-label-caps text-label-caps text-primary mb-3">Cloud &amp; Systems</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">Docker</span><span class="skill-badge px-2 py-1 text-xs rounded-full">K8s</span><span class="skill-badge px-2 py-1 text-xs rounded-full">AWS (EC2/S3)</span></div></div>
 </div>
 </section>
 <!-- Awards & Service -->
-<section class="bg-surface-container-low py-section-gap">
+<section class="bg-surface-container-low py-section-gap reveal active opacity-0">
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-<div class="reveal">
+<div>
 <h3 class="font-headline-md text-headline-md text-primary mb-5">Honors &amp; Awards</h3>
 <ul class="space-y-4">
-<li class="flex gap-3 reveal stagger-1"><span class="text-primary text-xl">🏅</span> <span class="leading-relaxed">Ranked 1st in B.E. (Gold-medalist equivalent)</span></li>
-<li class="flex gap-3 reveal stagger-2"><span class="text-primary text-xl">🌏</span> <span class="leading-relaxed">Fully funded international sponsorship for graduate studies</span></li>
-<li class="flex gap-3 reveal stagger-3"><span class="text-primary text-xl">🇮🇳</span> <span class="leading-relaxed">ICCR Scholarship (India) for M.Tech</span></li>
-<li class="flex gap-3 reveal stagger-4"><span class="text-primary text-xl">📚</span> <span class="leading-relaxed">Multiple year-wise academic excellence awards</span></li>
+<li class="flex gap-3"><span class="text-primary text-xl">🏅</span> <span class="leading-relaxed">Ranked 1st in B.E. (Gold-medalist equivalent)</span></li>
+<li class="flex gap-3"><span class="text-primary text-xl">🌏</span> <span class="leading-relaxed">Fully funded international sponsorship for graduate studies</span></li>
+<li class="flex gap-3"><span class="text-primary text-xl">🇮🇳</span> <span class="leading-relaxed">ICCR Scholarship (India) for M.Tech</span></li>
+<li class="flex gap-3"><span class="text-primary text-xl">📚</span> <span class="leading-relaxed">Multiple year-wise academic excellence awards</span></li>
 </ul>
 </div>
-<div class="reveal">
+<div>
 <h3 class="font-headline-md text-headline-md text-primary mb-5">Academic Service</h3>
 <ul class="space-y-4">
-<li class="flex gap-3 reveal stagger-1"><span class="material-symbols-outlined text-primary text-xl">rate_review</span> <span class="leading-relaxed"><strong>Reviewer:</strong> IEEE TDSC</span></li>
-<li class="flex gap-3 reveal stagger-2"><span class="material-symbols-outlined text-primary text-xl">event_note</span> <span class="leading-relaxed"><strong>Sub-reviewer:</strong> CF 2025, SPACE 2025, CANS 2024</span></li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary text-xl">rate_review</span> <span class="leading-relaxed"><strong>Reviewer:</strong> IEEE TDSC</span></li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary text-xl">event_note</span> <span class="leading-relaxed"><strong>Sub-reviewer:</strong> CF 2025, SPACE 2025, CANS 2024</span></li>
 </ul>
-<div class="mt-8 reveal stagger-3">
+<div class="mt-8">
 <h4 class="font-body-md font-bold text-primary mb-2">Talks &amp; Presentations</h4>
 <ul class="space-y-2 text-sm text-on-surface-variant list-disc pl-4 leading-relaxed">
 <li class="">Paper presentation — SPACE 2024</li>
@@ -496,21 +457,25 @@
 </div>
 </section>
 <!-- Contact -->
+<!-- Contact -->
 <section class="bg-primary text-on-primary py-section-gap" id="contact">
-<div class="max-w-container-max mx-auto px-gutter text-center reveal">
-<span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest block mb-4">Get in touch</span>
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest">Get in touch</span>
+
 <div class="flex flex-col gap-6 justify-center items-center mt-8">
-<!-- Email -->
-<div class="flex items-center gap-3 text-lg text-on-primary/80 reveal stagger-1">
-<span class="material-symbols-outlined">mail</span>
-<span class="leading-relaxed">baddour.1 (add "@iitj.ac.in")</span>
+    <!-- Email -->
+    <div class="flex items-center gap-3 text-lg text-on-primary/80">
+        <span class="material-symbols-outlined">mail</span>
+        <span class="leading-relaxed">baddour.1 (add "@iitj.ac.in")</span>
+    </div>
+
+    <!-- Location / Address -->
+    <div class="flex items-center gap-3 text-lg text-on-primary/80">
+        <span class="material-symbols-outlined text-2xl">location_on</span>
+        <span class="leading-relaxed">Lab 203, CSE Department, IIT Jodhpur</span>
+    </div>
 </div>
-<!-- Location / Address -->
-<div class="flex items-center gap-3 text-lg text-on-primary/80 reveal stagger-2">
-<span class="material-symbols-outlined text-2xl">location_on</span>
-<span class="leading-relaxed">Lab 203, CSE Department, IIT Jodhpur</span>
-</div>
-</div>
+
 </div>
 </section>
 <!-- Footer -->
@@ -529,79 +494,37 @@
 </div>
 <p class="text-white/40 text-xs">
             © 2026 Issa Baddour | Last updated:
-            <span class="" id="last-updated">May 2026</span>
+            <span id="last-updated" class="">May 2026</span>
 </p>
 </div>
 </footer>
 </main>
 <script>
-// Mouse tracking Hero Glow
-const hero = document.getElementById('hero');
-if (hero) {
-    window.addEventListener('mousemove', (e) => {
-        const x = (e.clientX / window.innerWidth) * 100;
-        const y = (e.clientY / window.innerHeight) * 100;
-        hero.style.setProperty('--mouse-x', `${x}%`);
-        hero.style.setProperty('--mouse-y', `${y}%`);
-    });
-}
-
-// Particle Background Generation
-const particleContainer = document.getElementById('particle-container');
-if (particleContainer) {
-    for (let i = 0; i < 20; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = `${Math.random() * 100}%`;
-        particle.style.setProperty('--duration', `${5 + Math.random() * 10}s`);
-        particle.style.setProperty('--drift', `${(Math.random() - 0.5) * 100}px`);
-        particle.style.animationDelay = `${Math.random() * 5}s`;
-        particleContainer.appendChild(particle);
-    }
-}
-
-// Intersection Observer for Scroll Animations & Navigation Highlight
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('section[id], #hero');
-
+// Intersection Observer for Scroll Animations
 const revealCallback = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            if (entry.target.classList.contains('reveal')) {
-                entry.target.classList.add('active');
-            }
-            
-            // Handle Navigation Active State
-            const id = entry.target.getAttribute('id');
-            if (id) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active', 'font-bold', 'text-primary');
-                    link.classList.add('text-on-surface-variant');
-                    const href = link.getAttribute('href').substring(1);
-                    if (href === id || (id === 'hero' && href === '')) {
-                        link.classList.add('active', 'font-bold', 'text-primary');
-                        link.classList.remove('text-on-surface-variant');
-                    }
-                });
-            }
+            entry.target.classList.add('active');
+            // Once revealed, no need to watch anymore
+            // observer.unobserve(entry.target); 
         }
     });
 };
 
 const revealOptions = {
-    threshold: 0.15,
-    rootMargin: '-10% 0px -10% 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver(revealCallback, revealOptions);
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-sections.forEach(sec => observer.observe(sec));
 
-// Last updated logic
 document.getElementById('last-updated') && 
     (document.getElementById('last-updated').innerText = new Date(document.lastModified).toLocaleDateString('en-US', { 
         month: 'long', 
         year: 'numeric' 
     }));
 </script>
+
+
 </body></html>
