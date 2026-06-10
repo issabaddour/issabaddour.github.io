@@ -275,8 +275,25 @@
 <a class="nav-link font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a><a class="nav-link font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#cv">Education</a>
 </nav>
 <a class="bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps rounded-xl transition-all hover:opacity-90" href="#contact">Contact Me</a>
+<!-- Hamburger (mobile only) -->
+      <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 rounded-lg hover:bg-surface-container transition-colors" id="hamburger">
+        <span class="block w-5 h-0.5 bg-primary transition-all" id="ham-line1"></span>
+        <span class="block w-5 h-0.5 bg-primary transition-all" id="ham-line2"></span>
+        <span class="block w-5 h-0.5 bg-primary transition-all" id="ham-line3"></span>
+      </button>
 </div>
 </header>
+
+<!-- Mobile Menu -->
+<nav aria-label="Mobile navigation" id="mobile-menu">
+  <a href="#">Home</a>
+  <a href="#research">Research</a>
+  <a href="#publications">Publications</a>
+  <a href="#projects">Projects</a>
+  <a href="#cv">Education</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <main class="pt-16 overflow-hidden">
 <!-- Hero Section -->
 <section class="hero-glow" id="hero">
@@ -921,6 +938,39 @@ document.getElementById('last-updated') &&
     }));
 
 
+// Mobile hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const hamLine1 = document.getElementById('ham-line1');
+const hamLine2 = document.getElementById('ham-line2');
+const hamLine3 = document.getElementById('ham-line3');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    // Animate hamburger to X
+    if (isOpen) {
+      hamLine1.style.transform = 'translateY(6px) rotate(45deg)';
+      hamLine2.style.opacity = '0';
+      hamLine3.style.transform = 'translateY(-6px) rotate(-45deg)';
+    } else {
+      hamLine1.style.transform = '';
+      hamLine2.style.opacity = '';
+      hamLine3.style.transform = '';
+    }
+  });
+  // Close mobile menu when a link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamLine1.style.transform = '';
+      hamLine2.style.opacity = '';
+      hamLine3.style.transform = '';
+    });
+  });
+}
   // Abstract toggles
 document.querySelectorAll('.abstract-toggle-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -947,9 +997,6 @@ function copyEmail() {
     toast.classList.add("opacity-0");
   }, 2000);
 }
-
-
-
 
 </script>
 </body></html>
