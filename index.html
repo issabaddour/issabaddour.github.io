@@ -88,101 +88,180 @@
       }
     </script>
 <style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        display: inline-block;
-        vertical-align: middle;
-        line-height: 1;
-      }
-      .nav-blur { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-      
-      .skill-badge {
-        background-color: #f1f5f9;
-        border: 1px solid #e2e8f0;
-        transition: all 0.2s ease;
-      }
-      .skill-badge:hover { border-color: #091426; background-color: #ffffff; }
-      
-      .timeline-line { width: 2px; background-color: #e2e8f0; }
-      .timeline-dot { width: 8px; height: 8px; background-color: #505f76; border-radius: 50%; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  .nav-blur { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
-      /* Interaction Enhancements */
-      .nav-link {
-        position: relative;
-        padding-bottom: 4px;
-      }
-      .nav-link::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: #091426;
-        transition: width 0.3s ease;
-      }
-      .nav-link:hover::after, .nav-link.active::after {
-        width: 100%;
-      }
+  .skill-badge {
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+  }
+  .skill-badge:hover { border-color: #091426; background-color: #ffffff; }
 
-      .hover-lift {
-        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
-      }
-      .hover-lift:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12), 0 10px 15px -10px rgba(0, 0, 0, 0.1);
-      }
+  .timeline-line { width: 2px; background-color: #e2e8f0; }
+  .timeline-dot { width: 8px; height: 8px; background-color: #505f76; border-radius: 50%; }
 
-      /* Scroll Animation Classes */
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      
-      /* Staggered Delay Helpers */
-      .reveal.stagger-1 { transition-delay: 0.1s; }
-      .reveal.stagger-2 { transition-delay: 0.2s; }
-      .reveal.stagger-3 { transition-delay: 0.3s; }
-      .reveal.stagger-4 { transition-delay: 0.4s; }
-      .reveal.stagger-5 { transition-delay: 0.5s; }
-      .reveal.stagger-6 { transition-delay: 0.6s; }
-      .reveal.stagger-7 { transition-delay: 0.7s; }
-      .reveal.stagger-8 { transition-delay: 0.8s; }
+  .nav-link {
+    position: relative;
+    padding-bottom: 4px;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #091426;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-      /* Hero Glow - Dynamic */
-      .hero-glow {
-        background: radial-gradient(
-          circle at var(--mouse-x, 70%) var(--mouse-y, 30%), 
-          rgba(216, 227, 251, 0.5) 0%, 
-          rgba(247, 249, 251, 0) 60%
-        );
-        transition: background 0.1s ease-out;
-      }
+  .hover-lift {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.10), 0 8px 15px -8px rgba(0,0,0,0.08);
+  }
 
-      /* Particle Background */
-      .particle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        pointer-events: none;
-        animation: float-up var(--duration) linear infinite;
-        opacity: 0;
-      }
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.active { opacity: 1; transform: translateY(0); }
 
-      @keyframes float-up {
-        0% { transform: translateY(100%) translateX(0); opacity: 0; }
-        10% { opacity: 0.4; }
-        90% { opacity: 0.4; }
-        100% { transform: translateY(-100%) translateX(var(--drift)); opacity: 0; }
-      }
-    </style>
+  .reveal.stagger-1 { transition-delay: 0.1s; }
+  .reveal.stagger-2 { transition-delay: 0.2s; }
+  .reveal.stagger-3 { transition-delay: 0.3s; }
+  .reveal.stagger-4 { transition-delay: 0.4s; }
+  .reveal.stagger-5 { transition-delay: 0.5s; }
+  .reveal.stagger-6 { transition-delay: 0.6s; }
+  .reveal.stagger-7 { transition-delay: 0.7s; }
+  .reveal.stagger-8 { transition-delay: 0.8s; }
+
+  .hero-glow {
+    background: radial-gradient(
+      circle at var(--mouse-x, 70%) var(--mouse-y, 30%),
+      rgba(216, 227, 251, 0.5) 0%,
+      rgba(247, 249, 251, 0) 60%
+    );
+    transition: background 0.1s ease-out;
+  }
+
+  /* Particle Background */
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float-up var(--duration) linear infinite;
+    opacity: 0;
+  }
+  @keyframes float-up {
+    0%   { transform: translateY(100%) translateX(0); opacity: 0; }
+    10%  { opacity: 0.4; }
+    90%  { opacity: 0.4; }
+    100% { transform: translateY(-100%) translateX(var(--drift)); opacity: 0; }
+  }
+
+  /* Abstract toggle */
+  .abstract-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+    opacity: 0;
+  }
+  .abstract-body.open {
+    max-height: 400px;
+    opacity: 1;
+  }
+  .abstract-toggle-btn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: #505f76;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.2s;
+  }
+  .abstract-toggle-btn:hover { color: #091426; }
+  .abstract-toggle-icon { transition: transform 0.3s ease; }
+  .abstract-toggle-btn.open .abstract-toggle-icon { transform: rotate(180deg); }
+
+  /* Figure placeholder */
+  .fig-placeholder {
+    background: repeating-linear-gradient(
+      45deg,
+      #f1f5f9,
+      #f1f5f9 10px,
+      #e8ecf1 10px,
+      #e8ecf1 20px
+    );
+    border: 2px dashed #c5c6cd;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #75777d;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    padding: 1rem;
+  }
+  .fig-placeholder span.fig-icon {
+    font-size: 28px;
+    opacity: 0.5;
+  }
+  .fig-placeholder strong {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #45474c;
+  }
+
+  /* Mobile menu */
+  #mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: #f7f9fb;
+    border-bottom: 1px solid #c5c6cd;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    z-index: 49;
+  }
+  #mobile-menu.open { display: flex; }
+  #mobile-menu a {
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #45474c;
+    border-bottom: 1px solid #e8ecf1;
+    transition: background 0.15s, color 0.15s;
+  }
+  #mobile-menu a:hover { background: #eceef0; color: #091426; }
+</style>
 <script data-id="a88f7746-35c3-4814-9e58-48ec6c0e9e2f" data-utcoffset="6" src="https://cdn.counter.dev/script.js"></script>
 </head>
 <body class="bg-surface font-body-md text-on-surface">
@@ -241,7 +320,7 @@
 </div>
 <div class="md:col-span-5 flex justify-center reveal stagger-4">
 <div class="relative w-full max-w-[400px] aspect-square rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-<img alt="Issa Baddour" class="w-full h-full object-cover" src="profile.jpg"/>
+<img alt="Issa Baddour" class="w-full h-full object-cover" src="images/profile.jpg"/>
 <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl"></div>
 </div>
 </div>
@@ -279,137 +358,352 @@
 </div>
 </div>
 </section>
-<!-- PhD Thesis Highlight -->
+
+<!-- ══════════════════════════ PhD THESIS HIGHLIGHT ═══ -->
 <section class="max-w-container-max mx-auto px-gutter py-section-gap">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-<div class="reveal">
-<span class="font-label-caps text-label-caps text-secondary">Core Contribution</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mt-2">PhD Thesis: Cross-Layer GPU Information Leakage</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-6 leading-relaxed">
-                        My thesis examines information leakage across three abstraction layers—microarchitectural resources, interconnect fabrics (NVLink), and application-level LLM inference—demonstrating that no single mitigation eliminates all channels.
-                    </p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    <div class="reveal">
+      <span class="font-label-caps text-label-caps text-secondary">Core Contribution</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary mt-2">PhD Thesis: Cross-Layer GPU Information Leakage</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mt-6 leading-relaxed">
+        My thesis examines information leakage across three abstraction layers—microarchitectural resources, interconnect fabrics, LLM inference—demonstrating that no single mitigation eliminates all channels. The unifying finding is that GPU systems consistently expose measurable side-channel signals regardless of the abstraction level at which the attacker observes.
+      </p>
+<!-- Thesis architecture diagram -->
+<div class="mt-6" style="text-align:center;">
+  <img
+    src="images/thesis-architecture-diagram.png"
+    alt="Three-layer GPU attack surface diagram showing Microarchitectural, NVLink, and LLM Inference layers"
+    style="max-width:95%; height:auto; border-radius:8px;"
+  />
 </div>
-<div class="space-y-4">
-<div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-2">
-<h3 class="font-body-md font-bold text-primary mb-1">🔬 Microarchitectural Layer: 44.7 Mbps covert channel</h3>
-<p class="font-body-sm text-secondary leading-relaxed">Reverse-engineered warp scheduling on NVIDIA A100; 10x improvement over prior work. Randomization reduces ML detectability to 36%.</p>
-</div>
-<div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-3">
-<h3 class="font-body-md font-bold text-primary mb-1">🔗 Interconnect Layer: NVLink attack surface</h3>
-<p class="font-body-sm text-secondary leading-relaxed">First to expose NVLink across V100/A100/H200. Covert channel: 6.33–9.90 Kbps. Side-channel fingerprinting: 96.2% accuracy (25 apps).</p>
-</div>
-<div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-4">
-<h3 class="font-body-md font-bold text-primary mb-1">🤖 Application Layer: LLM inference leakage</h3>
-<p class="font-body-sm text-secondary leading-relaxed">Model fingerprinting: 99.94% accuracy (7 LLMs). Prompt-family inference: 81–100% accuracy under realistic stochastic decoding.</p>
-</div>
-</div>
-</div>
+    </div>
+    <div class="space-y-4">
+      <div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-2">
+        <h3 class="font-body-md font-bold text-primary mb-1">🔬 Microarchitectural Layer: 44.7 Mbps covert channel</h3>
+        <p class="font-body-sm text-secondary leading-relaxed">Extended binary contention to four-level signaling on NVIDIA DGX A100. Achieved 44 Mbps (1 GPU) and 340 Mbps (8 GPUs). Behavioral randomization via SFU function combinations reduces ML detectability from 100% to 36%.</p>
+      </div>
+      <div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-3">
+        <h3 class="font-body-md font-bold text-primary mb-1">🔗 Interconnect Layer: NVLink attack surface</h3>
+        <p class="font-body-sm text-secondary leading-relaxed">First study to expose NVLink contention across V100, A100, and H200. Covert channel: 6.33–9.90 Kbps with negligible error rates. Application fingerprinting via NVLink latency traces: 96.2% accuracy across 25 apps. Temporal and spatial partitioning countermeasures evaluated.</p>
+      </div>
+      <div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-4">
+        <h3 class="font-body-md font-bold text-primary mb-1">🤖 Application Layer: LLM inference leakage</h3>
+        <p class="font-body-sm text-secondary leading-relaxed">CUDA runtime activity and GPU telemetry reveal model identity and prompt semantics. Model fingerprinting: 99.94% accuracy across 7 LLMs. Prompt-family inference: consistently above-chance across all models. First leakage study under realistic stochastic decoding.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Publications -->
+
+<!-- ═══════════════════════════════ PUBLICATIONS ═══ -->
 <section class="bg-surface-container-low py-section-gap" id="publications">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="flex flex-col md:flex-row md:justify-between md:items-end mb-element-gap gap-4 reveal">
-<div>
-<span class="font-label-caps text-label-caps text-secondary">Academic Record</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Selected Publications</h2>
-</div>
-<div class="flex gap-4">
-<span class="flex items-center gap-1 font-label-caps text-label-caps text-primary"><span class="w-3 h-3 bg-on-tertiary-container rounded-full"></span> Journal</span>
-<span class="flex items-center gap-1 font-label-caps text-label-caps text-primary"><span class="w-3 h-3 bg-secondary rounded-full"></span> Conference</span>
-</div>
-</div>
-<!-- 2026 -->
-<div class="mb-10 reveal">
-<h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2026 <span class="h-px flex-1 bg-outline-variant"></span></h3>
-<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
-<div class="flex justify-between items-start gap-4 flex-wrap">
-<div class="max-w-2xl">
-<h4 class="font-body-md font-bold text-primary mb-1">SideLink: Exposing NVLink to Covert and Side-Channel Attacks</h4>
-<p class="font-body-sm text-on-surface-variant mb-2 leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
-<div class="flex gap-2 flex-wrap">
-<span class="bg-surface-container px-2 py-0.5 rounded font-label-caps text-label-caps text-secondary">Journal of Hardware and Systems Security (Special Issue)</span>
-</div>
-</div>
-<a class="font-label-caps text-label-caps border border-outline px-3 py-1 rounded hover:bg-primary hover:text-white transition-all whitespace-nowrap" href="https://link.springer.com/article/10.1007/s41635-026-00175-3" target="_blank">DOI →</a>
-</div>
-</div>
-</div>
-<!-- 2025 -->
-<div class="mb-10 reveal">
-<h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2025 <span class="h-px flex-1 bg-outline-variant"></span></h3>
-<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
-<div class="flex justify-between items-start gap-4 flex-wrap">
-<div class="max-w-2xl">
-<h4 class="font-body-md font-bold text-primary mb-1">An Improved Micro-Architectural Covert-Channel Attack on GPUs</h4>
-<p class="font-body-sm text-on-surface-variant mb-2 leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
-<div class="flex gap-2 flex-wrap">
-<span class="bg-surface-container px-2 py-0.5 rounded font-label-caps text-label-caps text-secondary">Journal of Hardware and Systems Security</span>
-</div>
-</div>
-<a class="font-label-caps text-label-caps border border-outline px-3 py-1 rounded hover:bg-primary hover:text-white transition-all whitespace-nowrap" href="https://link.springer.com/article/10.1007/s41635-025-00170-0" target="_blank">DOI →</a>
-</div>
-</div>
-</div>
-<!-- 2024 -->
-<div class="mb-10 reveal">
-<h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2024 <span class="h-px flex-1 bg-outline-variant"></span></h3>
-<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
-<div class="flex justify-between items-start gap-4 flex-wrap">
-<div class="max-w-2xl">
-<h4 class="font-body-md font-bold text-primary mb-1">SideLink: Exposing NVLink to Covert and Side-Channel Attacks (Work-in-Progress)</h4>
-<p class="font-body-sm text-on-surface-variant mb-2 leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
-<div class="flex gap-2 flex-wrap">
-<span class="bg-secondary-fixed px-2 py-0.5 rounded font-label-caps text-label-caps text-primary">SPACE 2024 (Conference)</span>
-</div>
-</div>
-<a class="font-label-caps text-label-caps border border-outline px-3 py-1 rounded hover:bg-primary hover:text-white transition-all whitespace-nowrap" href="https://link.springer.com/chapter/10.1007/978-3-031-80408-3_2" target="_blank">DOI →</a>
-</div>
-</div>
-</div>
-<!-- Under Submission -->
-<div class="reveal">
-<h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">Under Submission <span class="h-px flex-1 bg-outline-variant"></span></h3>
-<div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
-<h4 class="font-body-md font-bold text-primary mb-1">Side-Channel Leakage in Large Language Model Inference on GPUs</h4>
-<p class="font-body-sm text-on-surface-variant leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
-<p class="font-body-sm text-secondary mt-2 leading-relaxed max-w-2xl">Demonstrates side-channel leakage in LLM inference across 7 models (OPT, Mistral, Phi-2, Qwen2, TinyLlama, Falcon) with stochastic decoding. Model fingerprinting: 99.94% accuracy.</p>
-</div>
-</div>
-</div>
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-element-gap gap-4 reveal">
+      <div>
+        <span class="font-label-caps text-label-caps text-secondary">Academic Record</span>
+        <h2 class="font-headline-lg text-headline-lg text-primary mt-2">Selected Publications</h2>
+      </div>
+      <div class="flex gap-4">
+        <span class="flex items-center gap-1 font-label-caps text-label-caps text-primary">
+          <span class="w-3 h-3 bg-on-tertiary-container rounded-full" aria-hidden="true"></span> Journal
+        </span>
+        <span class="flex items-center gap-1 font-label-caps text-label-caps text-primary">
+          <span class="w-3 h-3 bg-secondary rounded-full" aria-hidden="true"></span> Conference
+        </span>
+      </div>
+    </div>
+
+    <!-- 2026 -->
+    <div class="mb-10 reveal">
+      <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2026 <span class="h-px flex-1 bg-outline-variant"></span></h3>
+      <div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+        <div class="flex justify-between items-start gap-4 flex-wrap mb-3">
+          <div class="max-w-2xl">
+            <h4 class="font-body-md font-bold text-primary mb-1">SideLink: Exposing NVLink to Covert and Side-Channel Attacks</h4>
+            <p class="font-body-sm text-on-surface-variant mb-2 leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
+            <div class="flex gap-2 flex-wrap">
+              <span class="bg-surface-container px-2 py-0.5 rounded font-label-caps text-label-caps text-secondary">Journal of Hardware and Systems Security (Special Issue)</span>
+            </div>
+          </div>
+          <a class="font-label-caps text-label-caps border border-outline px-3 py-1 rounded hover:bg-primary hover:text-white transition-all whitespace-nowrap" href="https://link.springer.com/article/10.1007/s41635-026-00175-3" target="_blank" rel="noopener noreferrer">DOI →</a>
+        </div>
+        <button class="abstract-toggle-btn" data-target="abs-sidelink-journal" aria-expanded="false">
+          <span>Abstract</span>
+          <span class="material-symbols-outlined abstract-toggle-icon text-sm" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="abstract-body mt-3" id="abs-sidelink-journal">
+          <p class="font-body-sm text-on-surface-variant leading-relaxed border-l-2 border-outline-variant pl-4">
+            NVLink is a high-bandwidth interconnect in NVIDIA GPU systems that has become essential for AI workloads in data centers. Despite its high bandwidth, we show that NVLink exhibits measurable contention characteristics that enable both covert and side-channel attacks. We evaluate SideLink across NVIDIA's Hopper (H200), Ampere (A100), and Volta (V100) architectures, achieving covert channel bandwidths of 8.29 Kbps, 9.90 Kbps, and 6.33 Kbps respectively with negligible error rates. We further implement an application fingerprinting side-channel, achieving a maximum accuracy of 96.2% across 25 dual-GPU applications. We propose and evaluate temporal and spatial partitioning countermeasures for NVLink, analyzing their effectiveness and performance overhead.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="mb-10 reveal">
+      <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2025 <span class="h-px flex-1 bg-outline-variant"></span></h3>
+      <div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+        <div class="flex justify-between items-start gap-4 flex-wrap mb-3">
+          <div class="max-w-2xl">
+            <h4 class="font-body-md font-bold text-primary mb-1">An Improved Micro-Architectural Covert-Channel Attack on GPUs</h4>
+            <p class="font-body-sm text-on-surface-variant mb-2 leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
+            <div class="flex gap-2 flex-wrap">
+              <span class="bg-surface-container px-2 py-0.5 rounded font-label-caps text-label-caps text-secondary" style="color:#469e95">Journal of Hardware and Systems Security</span>
+            </div>
+          </div>
+          <a class="font-label-caps text-label-caps border border-outline px-3 py-1 rounded hover:bg-primary hover:text-white transition-all whitespace-nowrap" href="https://link.springer.com/article/10.1007/s41635-025-00170-0" target="_blank" rel="noopener noreferrer">DOI →</a>
+        </div>
+        <button class="abstract-toggle-btn" data-target="abs-covert-journal" aria-expanded="false">
+          <span>Abstract</span>
+          <span class="material-symbols-outlined abstract-toggle-icon text-sm" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="abstract-body mt-3" id="abs-covert-journal">
+          <p class="font-body-sm text-on-surface-variant leading-relaxed border-l-2 border-outline-variant pl-4">
+            We address two major challenges in GPU covert-channel research: improving bandwidth and evading detection. We present an enhanced mechanism that extends binary contention-based communication to a four-level signaling scheme, achieving error-free communication at over 44 Mbps on a single GPU and over 340 Mbps across 8 GPUs on an NVIDIA DGX A100 system. We also systematically construct covert channels using every available function on the special function units (SFUs) and introduce behavioral randomization by dynamically combining these configurations. This randomized strategy achieves up to 38 Mbps (single GPU) and 274 Mbps (8 GPUs) with BER under 10%, and significantly reduces ML-based detectability compared to traditional approaches.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="mb-10 reveal">
+      <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2024 <span class="h-px flex-1 bg-outline-variant"></span></h3>
+      <div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+        <div class="flex justify-between items-start gap-4 flex-wrap mb-3">
+          <div class="max-w-2xl">
+            <h4 class="font-body-md font-bold text-primary mb-1">SideLink: Exposing NVLink to Covert and Side-Channel Attacks <span class="text-xs font-normal text-on-surface-variant">(Work-in-Progress)</span></h4>
+            <p class="font-body-sm text-on-surface-variant mb-2 leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
+            <div class="flex gap-2 flex-wrap">
+              <span class="bg-secondary-fixed px-2 py-0.5 rounded font-label-caps text-label-caps text-primary">SPACE 2024 (Conference)</span>
+            </div>
+          </div>
+          <a class="font-label-caps text-label-caps border border-outline px-3 py-1 rounded hover:bg-primary hover:text-white transition-all whitespace-nowrap" href="https://link.springer.com/chapter/10.1007/978-3-031-80408-3_2" target="_blank" rel="noopener noreferrer">DOI →</a>
+        </div>
+        <button class="abstract-toggle-btn" data-target="abs-sidelink-conf" aria-expanded="false">
+          <span>Abstract</span>
+          <span class="material-symbols-outlined abstract-toggle-icon text-sm" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="abstract-body mt-3" id="abs-sidelink-conf">
+          <p class="font-body-sm text-on-surface-variant leading-relaxed border-l-2 border-outline-variant pl-4">
+            Work-in-progress version of SideLink, presented at SPACE 2024. We present the first attack exploiting the NVLink bus for covert communication and information leakage, evaluated across Hopper, Ampere, and Volta GPU architectures. Covert channel bandwidths of 6.33–9.90 Kbps with negligible error rates are demonstrated. Application fingerprinting via NVLink latency traces achieves 96.2% accuracy. Extended and fully evaluated version published as a journal article (HaSS 2026).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Under Submission -->
+    <div class="reveal">
+      <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">Under Submission <span class="h-px flex-1 bg-outline-variant"></span></h3>
+      <div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+        <div class="flex justify-between items-start gap-4 flex-wrap mb-3">
+          <div class="max-w-2xl">
+            <h4 class="font-body-md font-bold text-primary mb-1">Side-Channel Leakage in Large Language Model Inference on GPUs</h4>
+            <p class="font-body-sm text-on-surface-variant mb-2 leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
+            <div class="flex gap-2 flex-wrap">
+              <span class="bg-surface-container-high px-2 py-0.5 rounded font-label-caps text-label-caps text-on-surface-variant">Under Review</span>
+            </div>
+          </div>
+        </div>
+        <button class="abstract-toggle-btn" data-target="abs-llm" aria-expanded="false">
+          <span>Abstract</span>
+          <span class="material-symbols-outlined abstract-toggle-icon text-sm" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="abstract-body mt-3" id="abs-llm">
+          <p class="font-body-sm text-on-surface-variant leading-relaxed border-l-2 border-outline-variant pl-4">
+            We study whether CUDA runtime activity, kernel execution patterns, and GPU telemetry can be used to infer hidden properties of LLM inference. Collecting execution traces from seven LLMs (OPT, Mistral, Phi-2, Qwen2, TinyLlama, Falcon, and one additional model) under realistic conditions—allowing variable input lengths, stochastic decoding, and natural termination—we evaluate two tasks: (i) prompt-family inference, recovering high-level semantic categories of inputs; and (ii) model fingerprinting, identifying the executing model. Model fingerprinting reaches up to 99.94% accuracy with combined features and exceeds 97% using individual feature groups. These results reveal an asymmetry between prompt- and model-level leakage: model-level execution signatures remain stable and highly distinctive, indicating persistent GPU-side fingerprints that are difficult to obscure under realistic inference conditions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Projects -->
+
+<!-- ═══════════════════════════════════ PROJECTS ═══ -->
 <section class="max-w-container-max mx-auto px-gutter py-section-gap" id="projects">
-<div class="reveal">
-<span class="font-label-caps text-label-caps text-secondary">Technical Contributions</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mt-2 mb-6">Research Projects</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="bg-surface border border-outline-variant p-6 hover-lift rounded-2xl reveal stagger-1">
-<h3 class="font-body-md font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined text-secondary">speed</span> Execution-Level Covert Channels</h3>
-<ul class="mt-3 space-y-2 text-sm text-on-surface-variant list-disc pl-4 leading-relaxed">
-<li class="">44.7 Mbps single-GPU, 340.5 Mbps 8-GPU covert channels</li>
-<li class="">Reverse-engineered warp/block scheduling on A100</li>
-<li class="">Four-level encoding + ML evasion (64% evasion rate)</li>
-</ul>
-</div>
-<div class="bg-surface border border-outline-variant p-6 hover-lift rounded-2xl reveal stagger-2">
-<h3 class="font-body-md font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined text-secondary">hub</span> NVLink Side-Channel Analysis</h3>
-<ul class="mt-3 space-y-2 text-sm text-on-surface-variant list-disc pl-4 leading-relaxed">
-<li class="">First cross-generation attack (V100, A100, H200)</li>
-<li class="">Covert channel: 6.33–9.90 Kbps, near-zero BER</li>
-<li class="">Side-channel fingerprinting: 96.2% accuracy (25 apps)</li>
-</ul>
-</div>
-<div class="bg-surface border border-outline-variant p-6 hover-lift rounded-2xl reveal stagger-3">
-<h3 class="font-body-md font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined text-secondary">psychology</span> LLM Inference Leakage</h3>
-<ul class="mt-3 space-y-2 text-sm text-on-surface-variant list-disc pl-4 leading-relaxed">
-<li class="">Model fingerprinting: 99.94% across 7 LLMs</li>
-<li class="">Prompt-family inference: 81–100% accuracy</li>
-<li class="">First leakage study under realistic stochastic decoding</li>
-</ul>
-</div>
-</div>
+  <div class="reveal">
+    <span class="font-label-caps text-label-caps text-secondary">Technical Contributions</span>
+    <h2 class="font-headline-lg text-headline-lg text-primary mt-2 mb-8">Research Projects</h2>
+  </div>
+
+  <!-- Project 1: Covert Channels -->
+  <div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden hover-lift reveal stagger-1 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+      <div class="p-8">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-secondary" aria-hidden="true">speed</span>
+          <span class="font-label-caps text-label-caps text-secondary uppercase">Project 1</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-3">Execution-Level Covert Channels on GPUs</h3>
+        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+          <strong>Problem:</strong> Can co-resident GPU processes communicate covertly at practical bandwidths while evading ML-based detection?
+        </p>
+        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+          <strong>Approach:</strong> We reverse-engineered warp and block scheduling behavior on the NVIDIA A100 and extended binary contention-based channels to a four-level signaling scheme. To evade detection, we systematically exploited every function on the GPU's Special Function Units (SFUs) and introduced behavioral randomization—dynamically combining SFU function configurations within a single channel to obscure consistent usage patterns.
+        </p>
+        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-5">
+          <strong>Threat model:</strong> Multi-tenant cloud GPU environments, e.g., shared AI inference nodes where attacker and victim co-reside on the same physical GPU.
+        </p>
+        <div class="grid grid-cols-3 gap-3 mb-5">
+          <div class="bg-surface-container-low rounded-xl p-3 text-center">
+            <div class="font-headline-md text-headline-md text-primary font-bold">44 Mbps</div>
+            <div class="text-xs text-on-surface-variant mt-1">Single GPU</div>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-3 text-center">
+            <div class="font-headline-md text-headline-md text-primary font-bold">340 Mbps</div>
+            <div class="text-xs text-on-surface-variant mt-1">8-GPU cluster</div>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-3 text-center">
+            <div class="font-headline-md text-headline-md text-primary font-bold">36%</div>
+            <div class="text-xs text-on-surface-variant mt-1">ML detectability</div>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all text-primary" href="https://link.springer.com/article/10.1007/s41635-025-00170-0" target="_blank" rel="noopener noreferrer">Read Paper →</a>
+          <!-- Add GitHub link when available -->
+          <!-- <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-surface-container-low transition-all text-primary" href="YOUR_GITHUB_REPO" target="_blank">View Code →</a> -->
+        </div>
+      </div>
+      <!-- Figure placeholder: right column -->
+      <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border        border-outline-variant overflow-hidden"
+          style="min-height:180px;">
+        <img
+          src="images/covert-channel-bandwidth.png"
+          alt="Performance and stealth gains over prior GPU covert channels"
+          class="w-full h-full object-contain p-2"
+        />
+      </div>
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
+           style="min-height:180px;">
+          <img
+            src="images/covert-channel-system-diagram.png"
+            alt="Four-level SFU contention covert channel on NVIDIA DGX A100"
+            class="w-full h-full object-contain p-2"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2: SideLink -->
+  <div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden hover-lift reveal stagger-2 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+      <div class="p-8">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-secondary" aria-hidden="true">hub</span>
+          <span class="font-label-caps text-label-caps text-secondary uppercase">Project 2</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-3">SideLink: NVLink Side-Channel &amp; Covert-Channel Attacks</h3>
+        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+          <strong>Problem:</strong> NVLink is a critical high-bandwidth interconnect in multi-GPU AI systems. Does it introduce new attack surfaces? Can an unprivileged process exploit NVLink contention to communicate covertly or fingerprint co-resident workloads?
+        </p>
+        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+          <strong>Approach:</strong> We observed that NVLink exhibits measurable contention characteristics accessible via performance counters. We built a covert channel by modulating NVLink traffic from a sender process while a receiver monitors latency—tested across three GPU generations (V100, A100, H200). For the side channel, we collected NVLink latency traces from 25 dual-GPU applications including hashing and cryptomining workloads, then trained ML classifiers to fingerprint applications without any direct memory access.
+        </p>
+        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-5">
+          <strong>Countermeasures:</strong> We propose and evaluate temporal and spatial partitioning strategies for NVLink, analyzing their effectiveness and performance overhead in cloud environments.
+        </p>
+        <div class="grid grid-cols-3 gap-3 mb-5">
+          <div class="bg-surface-container-low rounded-xl p-3 text-center">
+            <div class="font-headline-md text-headline-md text-primary font-bold">9.9 Kbps</div>
+            <div class="text-xs text-on-surface-variant mt-1">Peak bandwidth</div>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-3 text-center">
+            <div class="font-headline-md text-headline-md text-primary font-bold">96.2%</div>
+            <div class="text-xs text-on-surface-variant mt-1">App fingerprinting</div>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-3 text-center">
+            <div class="font-headline-md text-headline-md text-primary font-bold">3 gens</div>
+            <div class="text-xs text-on-surface-variant mt-1">V100 / A100 / H200</div>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all text-primary" href="https://link.springer.com/article/10.1007/s41635-026-00175-3" target="_blank" rel="noopener noreferrer">Journal Paper →</a>
+          <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-surface-container-low transition-all text-primary" href="https://link.springer.com/chapter/10.1007/978-3-031-80408-3_2" target="_blank" rel="noopener noreferrer">SPACE 2024 →</a>
+        </div>
+      </div>
+      <!-- Figure placeholder: right column -->
+      <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
+           style="min-height:180px;">
+          <img
+            src="images/sidelink-architecture.png"
+            alt="SideLink NVLink covert-channel architecture"
+            class="w-full h-full object-contain p-2"
+          />
+        </div>
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
+           style="min-height:180px;">
+          <img
+            src="images/sidelink-fingerprinting.png"
+            alt="Application fingerprinting through NVLink latency traces"
+            class="w-full h-full object-contain p-2"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 3: LLM Inference Leakage -->
+  <div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden hover-lift reveal stagger-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+      <div class="p-8">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-secondary" aria-hidden="true">psychology</span>
+          <span class="font-label-caps text-label-caps text-secondary uppercase">Project 3</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-3">Side-Channel Leakage in LLM Inference on GPUs</h3>
+        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+          <strong>Problem:</strong> LLMs are increasingly deployed on shared GPU infrastructure. Can an unprivileged observer—sharing a GPU with an LLM inference server—infer the model being executed or the semantic category of user prompts, without any direct memory access?
+        </p>
+        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+          <strong>Approach:</strong> We collected CUDA runtime activity, kernel execution patterns, and GPU telemetry traces from seven LLMs (OPT, Mistral, Phi-2, Qwen2, TinyLlama, Falcon) under <em>realistic</em> conditions: variable input lengths, stochastic decoding, and natural termination. Previous work had only studied deterministic decoding, which does not reflect real deployments. We evaluated two tasks: prompt-family inference and model fingerprinting, using multiple ML classifiers and feature groups.
+        </p>
+        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-5">
+          <strong>Key finding:</strong> An asymmetry exists between prompt- and model-level leakage. Model-level execution signatures are stable and highly distinctive—difficult to obscure even under stochastic decoding—while prompt-level signals are more affected by runtime variability.
+        </p>
+        <div class="grid grid-cols-3 gap-3 mb-5">
+          <div class="bg-surface-container-low rounded-xl p-3 text-center">
+            <div class="font-headline-md text-headline-md text-primary font-bold">99.94%</div>
+            <div class="text-xs text-on-surface-variant mt-1">Model fingerprinting</div>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-3 text-center">
+            <div class="font-headline-md text-headline-md text-primary font-bold">7 LLMs</div>
+            <div class="text-xs text-on-surface-variant mt-1">Models evaluated</div>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-3 text-center">
+            <div class="font-headline-md text-headline-md text-primary font-bold">Realistic</div>
+            <div class="text-xs text-on-surface-variant mt-1">Stochastic decoding</div>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <span class="font-label-caps text-label-caps border border-outline-variant px-4 py-2 rounded-xl text-on-surface-variant bg-surface-container-low">Under Review</span>
+          <!-- Uncomment when preprint is available: -->
+          <!-- <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all text-primary" href="YOUR_ARXIV_LINK" target="_blank">Preprint →</a> -->
+        </div>
+      </div>
+      <!-- Figure placeholder: right column -->
+      <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
+           style="min-height:180px;">
+          <img
+            src="images/llm-trace-pipeline.png"
+            alt="GPU trace collection and analysis pipeline for LLM inference"
+            class="w-full h-full object-contain p-2"
+          />
+        </div>
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
+           style="min-height:180px;">
+          <img
+            src="images/llm-distinct-signatures.png"
+            alt="Different models produce distinct execution signatures"
+            class="w-full h-full object-contain p-2"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- Education & Experience -->
 <section class="bg-surface-container-highest py-section-gap" id="cv">
 <div class="max-w-container-max mx-auto px-gutter">
@@ -473,14 +767,14 @@
 <ul class="space-y-4">
 <li class="flex gap-3 reveal stagger-1"><span class="text-primary text-xl">🏅</span> <span class="leading-relaxed">Ranked 1st in B.E. (Gold-medalist equivalent)</span></li>
 <li class="flex gap-3 reveal stagger-2"><span class="text-primary text-xl">🌏</span> <span class="leading-relaxed">Fully funded international sponsorship for graduate studies</span></li>
-<li class="flex gap-3 reveal stagger-3"><span class="text-primary text-xl">🇮🇳</span> <span class="leading-relaxed">ICCR Scholarship (India) for M.Tech</span></li>
-<li class="flex gap-3 reveal stagger-4"><span class="text-primary text-xl">📚</span> <span class="leading-relaxed">Multiple year-wise academic excellence awards</span></li>
+<li class="flex gap-3 reveal stagger-3"><span class="text-primary text-xl">🇮🇳</span> <span class="leading-relaxed">ICCR Scholarship (Government of India) for M.Tech</span></li>
+<li class="flex gap-3 reveal stagger-4"><span class="text-primary text-xl">📚</span> <span class="leading-relaxed">Multiple year-wise academic excellence awards (2012–2016)</span></li>
 </ul>
 </div>
 <div class="reveal">
 <h3 class="font-headline-md text-headline-md text-primary mb-5">Academic Service</h3>
 <ul class="space-y-4">
-<li class="flex gap-3 reveal stagger-1"><span class="material-symbols-outlined text-primary text-xl">rate_review</span> <span class="leading-relaxed"><strong>Reviewer:</strong> IEEE TDSC</span></li>
+<li class="flex gap-3 reveal stagger-1"><span class="material-symbols-outlined text-primary text-xl">rate_review</span> <span class="leading-relaxed"><strong>Reviewer:</strong> IEEE Transactions on Dependable and Secure Computing (TDSC)</span></li>
 <li class="flex gap-3 reveal stagger-2"><span class="material-symbols-outlined text-primary text-xl">event_note</span> <span class="leading-relaxed"><strong>Sub-reviewer:</strong> CF 2025, SPACE 2025, CANS 2024</span></li>
 </ul>
 <div class="mt-8 reveal stagger-3">
@@ -495,46 +789,65 @@
 </div>
 </div>
 </section>
-<!-- Footer -->
-<footer class="bg-[#091426] text-white py-6" id="contact">
-<div class="max-w-container-max mx-auto px-gutter text-center">
-<span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest">Get in touch</span>
+<!-- ══════════════════════════════════ FOOTER ═══ -->
+<footer class="bg-[#091426] text-white py-10" id="contact">
+  <div class="max-w-container-max mx-auto px-gutter text-center">
+    <span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest block mb-6">Get in touch</span>
 
-<!-- Email -->
-<div class="mb-2">
-    <div class="flex items-center justify-center gap-3 text-base font-display">
-        <span class="material-symbols-outlined text-xl">mail</span> 
-        <span>baddour.1 <span class="text-white/60">(add</span> "@iitj.ac.in"<span class="text-white/60">)</span></span>
-    </div>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+   
+ <div class="relative flex items-center gap-1">
+
+  <!-- Copy button -->
+  <button
+    id="copy-email-btn"
+    type="button"
+    onclick="copyEmail()"
+    class="text-white/80 hover:text-white transition-colors"
+    aria-label="Copy email address"
+  >
+    <span
+      id="copy-email-icon"
+      class="material-symbols-outlined text-lg"
+    >
+      content_copy
+    </span>
+  </button>
+
+  <!-- Email -->
+  <a
+    class="flex items-center gap-1 text-white hover:text-on-primary-container transition-colors group"
+    href="mailto:baddour.1@iitj.ac.in"
+  >
+    <span class="material-symbols-outlined text-xl" aria-hidden="true">
+      mail
+    </span>
+
+    <span class="font-body-md text-base border-b border-white/20 group-hover:border-on-primary-container/60 transition-colors pb-0.5">
+      baddour.1@iitj.ac.in
+    </span>
+  </a>
+
+  <!-- Copied message -->
+  <span
+    id="copied-toast"
+    class="absolute -top-7 left-0 px-2 py-1 text-xs rounded-md bg-white text-black opacity-0 transition-opacity duration-200 pointer-events-none"
+  >
+    Copied!
+  </span>
+
 </div>
-
-<!-- Address -->
-<div class="mb-4">
-    <div class="flex items-center justify-center gap-2 text-sm text-white/70">
-        <span class="material-symbols-outlined text-lg">location_on</span>
+      <!-- Location -->
+      <span class="hidden sm:block w-px h-6 bg-white/20" aria-hidden="true"></span>
+      <div class="flex items-center gap-2 text-sm text-white/70">
+        <span class="material-symbols-outlined text-lg" aria-hidden="true">location_on</span>
         <span>Lab 203 — CSE Department, IIT Jodhpur, India</span>
+      </div>
     </div>
-</div>
-
-<!-- Counter -->
-<div class="flex justify-center mb-3">
-    <div class="inline-flex items-center gap-3 px-5 py-1.5 bg-[#091426]/80 backdrop-blur-sm rounded-full border border-white/20 transition-all hover:border-white/40">
-        <span class="material-symbols-outlined text-white/80 text-base">public</span>
-        <span class="text-white/80 text-sm font-medium tracking-wide">visits</span>
-        <div class="w-px h-4 bg-white/20 mx-1"></div>
-        <img src="https://hitcount.dev/p/issabaddour/https://github.com/issabaddour/issabaddour.github.io.svg?label=&labelColor=091426&countColor=091426"
-             alt="Hit Counter"
-             class="h-5 w-auto brightness-110">
-    </div>
-</div>
-
-<!-- Copyright -->
-<p class="text-white/40 text-xs">
-    © 2026 Issa Baddour | Last updated:
-    <span id="last-updated">May 2026</span>
-</p>
-
-</div>
+    <p class="text-white/40 text-xs">
+      © 2026 Issa Baddour | Last updated: <span id="last-updated">May 2026</span>
+    </p>
+  </div>
 </footer>
 </main>
 <script>
@@ -606,5 +919,37 @@ document.getElementById('last-updated') &&
         month: 'long', 
         year: 'numeric' 
     }));
+
+
+  // Abstract toggles
+document.querySelectorAll('.abstract-toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-target');
+    const body = document.getElementById(targetId);
+    if (!body) return;
+    const isOpen = body.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+    btn.querySelector('span:first-child').textContent = isOpen ? 'Hide Abstract' : 'Abstract';
+  });
+});
+function copyEmail() {
+  navigator.clipboard.writeText("baddour.1@iitj.ac.in");
+
+  const icon = document.getElementById("copy-email-icon");
+  const toast = document.getElementById("copied-toast");
+
+  icon.textContent = "check";
+  toast.classList.remove("opacity-0");
+
+  setTimeout(() => {
+    icon.textContent = "content_copy";
+    toast.classList.add("opacity-0");
+  }, 2000);
+}
+
+
+
+
 </script>
 </body></html>

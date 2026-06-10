@@ -353,7 +353,7 @@
     </div>
     <div class="md:col-span-5 flex justify-center reveal stagger-4">
       <div class="relative w-full max-w-[400px] aspect-square rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-        <img alt="Issa Baddour" class="w-full h-full object-cover" src="profile.jpg"/>
+        <img alt="Issa Baddour" class="w-full h-full object-cover" src="images/profile.jpg"/>
         <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl"></div>
       </div>
     </div>
@@ -431,15 +431,16 @@
       <span class="font-label-caps text-label-caps text-secondary">Core Contribution</span>
       <h2 class="font-headline-lg text-headline-lg text-primary mt-2">PhD Thesis: Cross-Layer GPU Information Leakage</h2>
       <p class="font-body-lg text-body-lg text-on-surface-variant mt-6 leading-relaxed">
-        My thesis examines information leakage across three abstraction layers—microarchitectural resources, interconnect fabrics (NVLink), and application-level LLM inference—demonstrating that no single mitigation eliminates all channels. The unifying finding is that GPU systems consistently expose measurable side-channel signals regardless of the abstraction level at which the attacker observes.
+        My thesis examines information leakage across three abstraction layers—microarchitectural resources, interconnect fabrics, LLM inference—demonstrating that no single mitigation eliminates all channels. The unifying finding is that GPU systems consistently expose measurable side-channel signals regardless of the abstraction level at which the attacker observes.
       </p>
-      <!-- PLACEHOLDER: Thesis architecture diagram -->
-      <div class="fig-placeholder mt-6" style="height: 220px;">
-        <span class="fig-icon material-symbols-outlined" aria-hidden="true">schema</span>
-        <strong>Figure Placeholder</strong>
-        <span>Three-layer GPU attack surface diagram<br/>(Microarchitectural → NVLink → LLM Inference)</span>
-        <span style="font-size:11px; opacity:0.7;">Replace with: thesis-architecture-diagram.svg / .png</span>
-      </div>
+<!-- Thesis architecture diagram -->
+<div class="mt-6" style="text-align:center;">
+  <img
+    src="images/thesis-architecture-diagram.png"
+    alt="Three-layer GPU attack surface diagram showing Microarchitectural, NVLink, and LLM Inference layers"
+    style="max-width:95%; height:auto; border-radius:8px;"
+  />
+</div>
     </div>
     <div class="space-y-4">
       <div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-2">
@@ -628,17 +629,21 @@
       </div>
       <!-- Figure placeholder: right column -->
       <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
-        <div class="fig-placeholder flex-1" style="min-height:180px;">
-          <span class="fig-icon material-symbols-outlined" aria-hidden="true">bar_chart</span>
-          <strong>Figure Placeholder</strong>
-          <span>Bandwidth vs. BER chart<br/>(standard vs. randomized channel)</span>
-          <span style="font-size:11px; opacity:0.7;">Replace with: covert-channel-bandwidth.png</span>
-        </div>
-        <div class="fig-placeholder flex-1" style="min-height:180px;">
-          <span class="fig-icon material-symbols-outlined" aria-hidden="true">schema</span>
-          <strong>Figure Placeholder</strong>
-          <span>System diagram: DGX A100 multi-GPU setup with SFU contention model</span>
-          <span style="font-size:11px; opacity:0.7;">Replace with: covert-channel-system-diagram.png</span>
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border        border-outline-variant overflow-hidden"
+          style="min-height:180px;">
+        <img
+          src="images/covert-channel-bandwidth.png"
+          alt="Performance and stealth gains over prior GPU covert channels"
+          class="w-full h-full object-contain p-2"
+        />
+      </div>
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
+           style="min-height:180px;">
+          <img
+            src="images/covert-channel-system-diagram.png"
+            alt="Four-level SFU contention covert channel on NVIDIA DGX A100"
+            class="w-full h-full object-contain p-2"
+          />
         </div>
       </div>
     </div>
@@ -683,17 +688,21 @@
       </div>
       <!-- Figure placeholder: right column -->
       <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
-        <div class="fig-placeholder flex-1" style="min-height:180px;">
-          <span class="fig-icon material-symbols-outlined" aria-hidden="true">account_tree</span>
-          <strong>Figure Placeholder</strong>
-          <span>NVLink covert-channel architecture diagram (sender/receiver setup, dual-GPU)</span>
-          <span style="font-size:11px; opacity:0.7;">Replace with: sidelink-architecture.png</span>
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
+           style="min-height:180px;">
+          <img
+            src="images/sidelink-architecture.png"
+            alt="SideLink NVLink covert-channel architecture"
+            class="w-full h-full object-contain p-2"
+          />
         </div>
-        <div class="fig-placeholder flex-1" style="min-height:180px;">
-          <span class="fig-icon material-symbols-outlined" aria-hidden="true">ssid_chart</span>
-          <strong>Figure Placeholder</strong>
-          <span>ML classifier accuracy results across 25 applications (confusion matrix or bar chart)</span>
-          <span style="font-size:11px; opacity:0.7;">Replace with: sidelink-fingerprinting-results.png</span>
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
+           style="min-height:180px;">
+          <img
+            src="images/sidelink-fingerprinting.png"
+            alt="Application fingerprinting through NVLink latency traces"
+            class="w-full h-full object-contain p-2"
+          />
         </div>
       </div>
     </div>
@@ -739,17 +748,21 @@
       </div>
       <!-- Figure placeholder: right column -->
       <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
-        <div class="fig-placeholder flex-1" style="min-height:180px;">
-          <span class="fig-icon material-symbols-outlined" aria-hidden="true">leaderboard</span>
-          <strong>Figure Placeholder</strong>
-          <span>Model fingerprinting accuracy across 7 LLMs (per feature group breakdown)</span>
-          <span style="font-size:11px; opacity:0.7;">Replace with: llm-fingerprinting-accuracy.png</span>
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
+           style="min-height:180px;">
+          <img
+            src="images/llm-trace-pipeline.png"
+            alt="GPU trace collection and analysis pipeline for LLM inference"
+            class="w-full h-full object-contain p-2"
+          />
         </div>
-        <div class="fig-placeholder flex-1" style="min-height:180px;">
-          <span class="fig-icon material-symbols-outlined" aria-hidden="true">timeline</span>
-          <strong>Figure Placeholder</strong>
-          <span>GPU kernel execution trace showing model-specific patterns (example trace visualization)</span>
-          <span style="font-size:11px; opacity:0.7;">Replace with: llm-execution-trace.png</span>
+        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
+           style="min-height:180px;">
+          <img
+            src="images/llm-distinct-signatures.png"
+            alt="Different models produce distinct execution signatures"
+            class="w-full h-full object-contain p-2"
+          />
         </div>
       </div>
     </div>
