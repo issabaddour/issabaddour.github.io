@@ -542,179 +542,174 @@
   </div>
 
   <!-- Project 1: Covert Channels -->
-  <div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden hover-lift reveal stagger-1 mb-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-      <div class="p-8">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="material-symbols-outlined text-secondary" aria-hidden="true">speed</span>
-          <span class="font-label-caps text-label-caps text-secondary uppercase">Project 1</span>
+  <div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden hover-lift reveal stagger-1 mb-6" id="project1">
+    <!-- Compact header -->
+    <div class="p-6 cursor-pointer" onclick="toggleProject('project1-content', 'project1-icon')">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-secondary text-2xl" aria-hidden="true">speed</span>
+          <h3 class="font-headline-md text-headline-md text-primary">Execution-Level Covert Channels on GPUs</h3>
         </div>
-        <h3 class="font-headline-md text-headline-md text-primary mb-3">Execution-Level Covert Channels on GPUs</h3>
-        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
-          <strong>Problem:</strong> Can co-resident GPU processes communicate covertly at practical bandwidths while evading ML-based detection?
-        </p>
-        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
-          <strong>Approach:</strong> We reverse-engineered warp and block scheduling behavior on the NVIDIA A100 and extended binary contention-based channels to a four-level signaling scheme. To evade detection, we systematically exploited every function on the GPU's Special Function Units (SFUs) and introduced behavioral randomization—dynamically combining SFU function configurations within a single channel to obscure consistent usage patterns.
-        </p>
-        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-5">
-          <strong>Threat model:</strong> Multi-tenant cloud GPU environments, e.g., shared AI inference nodes where attacker and victim co-reside on the same physical GPU.
-        </p>
-        <div class="grid grid-cols-3 gap-3 mb-5">
-          <div class="bg-surface-container-low rounded-xl p-3 text-center">
-            <div class="font-headline-md text-headline-md text-primary font-bold">44 Mbps</div>
-            <div class="text-xs text-on-surface-variant mt-1">Single GPU</div>
-          </div>
-          <div class="bg-surface-container-low rounded-xl p-3 text-center">
-            <div class="font-headline-md text-headline-md text-primary font-bold">340 Mbps</div>
-            <div class="text-xs text-on-surface-variant mt-1">8-GPU cluster</div>
-          </div>
-          <div class="bg-surface-container-low rounded-xl p-3 text-center">
-            <div class="font-headline-md text-headline-md text-primary font-bold">36%</div>
-            <div class="text-xs text-on-surface-variant mt-1">ML detectability</div>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-3">
-          <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all text-primary" href="https://link.springer.com/article/10.1007/s41635-025-00170-0" target="_blank" rel="noopener noreferrer">Read Paper →</a>
-          <!-- Add GitHub link when available -->
-          <!-- <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-surface-container-low transition-all text-primary" href="YOUR_GITHUB_REPO" target="_blank">View Code →</a> -->
-        </div>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" id="project1-icon">expand_more</span>
       </div>
-      <!-- Figure placeholder: right column -->
-      <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
-        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border        border-outline-variant overflow-hidden"
-          style="min-height:180px;">
-        <img
-          src="images/covert-channel-bandwidth.png"
-          alt="Performance and stealth gains over prior GPU covert channels"
-          class="w-full h-full object-contain p-2"
-        />
-      </div>
-        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
-           style="min-height:180px;">
-          <img
-            src="images/covert-channel-system-diagram.png"
-            alt="Four-level SFU contention covert channel on NVIDIA DGX A100"
-            class="w-full h-full object-contain p-2"
-          />
+      <p class="text-sm text-on-surface-variant mt-2 max-w-2xl">44.7 Mbps single-GPU / 340.5 Mbps 8-GPU covert channels with ML evasion (64% evasion rate)</p>
+    </div>
+    
+    <!-- Expandable content (hidden by default) -->
+    <div id="project1-content" class="expandable-project hidden">
+      <div class="border-t border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+          <div class="p-8">
+            <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+              <strong>Problem:</strong> Can co-resident GPU processes communicate covertly at practical bandwidths while evading ML-based detection?
+            </p>
+            <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+              <strong>Approach:</strong> We reverse-engineered warp and block scheduling behavior on the NVIDIA A100 and extended binary contention-based channels to a four-level signaling scheme. To evade detection, we systematically exploited every function on the GPU's Special Function Units (SFUs) and introduced behavioral randomization—dynamically combining SFU function configurations within a single channel to obscure consistent usage patterns.
+            </p>
+            <p class="font-body-sm text-on-surface-variant leading-relaxed mb-5">
+              <strong>Threat model:</strong> Multi-tenant cloud GPU environments, e.g., shared AI inference nodes where attacker and victim co-reside on the same physical GPU.
+            </p>
+            <div class="grid grid-cols-3 gap-3 mb-5">
+              <div class="bg-surface-container-low rounded-xl p-3 text-center">
+                <div class="font-headline-md text-headline-md text-primary font-bold">44 Mbps</div>
+                <div class="text-xs text-on-surface-variant mt-1">Single GPU</div>
+              </div>
+              <div class="bg-surface-container-low rounded-xl p-3 text-center">
+                <div class="font-headline-md text-headline-md text-primary font-bold">340 Mbps</div>
+                <div class="text-xs text-on-surface-variant mt-1">8-GPU cluster</div>
+              </div>
+              <div class="bg-surface-container-low rounded-xl p-3 text-center">
+                <div class="font-headline-md text-headline-md text-primary font-bold">36%</div>
+                <div class="text-xs text-on-surface-variant mt-1">ML detectability</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all text-primary" href="https://link.springer.com/article/10.1007/s41635-025-00170-0" target="_blank" rel="noopener noreferrer">Read Paper →</a>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
+            <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden" style="min-height:180px;">
+              <img src="images/covert-channel-bandwidth.png" alt="Performance and stealth gains" class="w-full h-full object-contain p-2" />
+            </div>
+            <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden" style="min-height:180px;">
+              <img src="images/covert-channel-system-diagram.png" alt="Four-level SFU contention covert channel" class="w-full h-full object-contain p-2" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Project 2: SideLink -->
-  <div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden hover-lift reveal stagger-2 mb-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-      <div class="p-8">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="material-symbols-outlined text-secondary" aria-hidden="true">hub</span>
-          <span class="font-label-caps text-label-caps text-secondary uppercase">Project 2</span>
+  <div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden hover-lift reveal stagger-2 mb-6" id="project2">
+    <div class="p-6 cursor-pointer" onclick="toggleProject('project2-content', 'project2-icon')">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-secondary text-2xl" aria-hidden="true">hub</span>
+          <h3 class="font-headline-md text-headline-md text-primary">SideLink: NVLink Side-Channel &amp; Covert-Channel Attacks</h3>
         </div>
-        <h3 class="font-headline-md text-headline-md text-primary mb-3">SideLink: NVLink Side-Channel &amp; Covert-Channel Attacks</h3>
-        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
-          <strong>Problem:</strong> NVLink is a critical high-bandwidth interconnect in multi-GPU AI systems. Does it introduce new attack surfaces? Can an unprivileged process exploit NVLink contention to communicate covertly or fingerprint co-resident workloads?
-        </p>
-        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
-          <strong>Approach:</strong> We observed that NVLink exhibits measurable contention characteristics accessible via performance counters. We built a covert channel by modulating NVLink traffic from a sender process while a receiver monitors latency—tested across three GPU generations (V100, A100, H200). For the side channel, we collected NVLink latency traces from 25 dual-GPU applications including hashing and cryptomining workloads, then trained ML classifiers to fingerprint applications without any direct memory access.
-        </p>
-        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-5">
-          <strong>Countermeasures:</strong> We propose and evaluate temporal and spatial partitioning strategies for NVLink, analyzing their effectiveness and performance overhead in cloud environments.
-        </p>
-        <div class="grid grid-cols-3 gap-3 mb-5">
-          <div class="bg-surface-container-low rounded-xl p-3 text-center">
-            <div class="font-headline-md text-headline-md text-primary font-bold">9.9 Kbps</div>
-            <div class="text-xs text-on-surface-variant mt-1">Peak bandwidth</div>
-          </div>
-          <div class="bg-surface-container-low rounded-xl p-3 text-center">
-            <div class="font-headline-md text-headline-md text-primary font-bold">96.2%</div>
-            <div class="text-xs text-on-surface-variant mt-1">App fingerprinting</div>
-          </div>
-          <div class="bg-surface-container-low rounded-xl p-3 text-center">
-            <div class="font-headline-md text-headline-md text-primary font-bold">3 gens</div>
-            <div class="text-xs text-on-surface-variant mt-1">V100 / A100 / H200</div>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-3">
-          <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all text-primary" href="https://link.springer.com/article/10.1007/s41635-026-00175-3" target="_blank" rel="noopener noreferrer">Journal Paper →</a>
-          <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-surface-container-low transition-all text-primary" href="https://link.springer.com/chapter/10.1007/978-3-031-80408-3_2" target="_blank" rel="noopener noreferrer">SPACE 2024 →</a>
-        </div>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" id="project2-icon">expand_more</span>
       </div>
-      <!-- Figure placeholder: right column -->
-      <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
-        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
-           style="min-height:180px;">
-          <img
-            src="images/sidelink-architecture.png"
-            alt="SideLink NVLink covert-channel architecture"
-            class="w-full h-full object-contain p-2"
-          />
-        </div>
-        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
-           style="min-height:180px;">
-          <img
-            src="images/sidelink-fingerprinting.png"
-            alt="Application fingerprinting through NVLink latency traces"
-            class="w-full h-full object-contain p-2"
-          />
+      <p class="text-sm text-on-surface-variant mt-2 max-w-2xl">First cross-generation NVLink attack (V100/A100/H200) | 96.2% app fingerprinting accuracy</p>
+    </div>
+    
+    <div id="project2-content" class="expandable-project hidden">
+      <div class="border-t border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+          <div class="p-8">
+            <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+              <strong>Problem:</strong> NVLink is a critical high-bandwidth interconnect in multi-GPU AI systems. Does it introduce new attack surfaces?
+            </p>
+            <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+              <strong>Approach:</strong> We observed that NVLink exhibits measurable contention characteristics. We built a covert channel by modulating NVLink traffic across three GPU generations (V100, A100, H200). For the side channel, we collected NVLink latency traces from 25 dual-GPU applications and trained ML classifiers to fingerprint applications without any direct memory access.
+            </p>
+            <p class="font-body-sm text-on-surface-variant leading-relaxed mb-5">
+              <strong>Countermeasures:</strong> We propose and evaluate temporal and spatial partitioning strategies for NVLink.
+            </p>
+            <div class="grid grid-cols-3 gap-3 mb-5">
+              <div class="bg-surface-container-low rounded-xl p-3 text-center">
+                <div class="font-headline-md text-headline-md text-primary font-bold">9.9 Kbps</div>
+                <div class="text-xs text-on-surface-variant mt-1">Peak bandwidth</div>
+              </div>
+              <div class="bg-surface-container-low rounded-xl p-3 text-center">
+                <div class="font-headline-md text-headline-md text-primary font-bold">96.2%</div>
+                <div class="text-xs text-on-surface-variant mt-1">App fingerprinting</div>
+              </div>
+              <div class="bg-surface-container-low rounded-xl p-3 text-center">
+                <div class="font-headline-md text-headline-md text-primary font-bold">3 gens</div>
+                <div class="text-xs text-on-surface-variant mt-1">V100/A100/H200</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all text-primary" href="https://link.springer.com/article/10.1007/s41635-026-00175-3" target="_blank" rel="noopener noreferrer">Journal Paper →</a>
+              <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-surface-container-low transition-all text-primary" href="https://link.springer.com/chapter/10.1007/978-3-031-80408-3_2" target="_blank" rel="noopener noreferrer">SPACE 2024 →</a>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
+            <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden" style="min-height:180px;">
+              <img src="images/sidelink-architecture.png" alt="SideLink NVLink covert-channel architecture" class="w-full h-full object-contain p-2" />
+            </div>
+            <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden" style="min-height:180px;">
+              <img src="images/sidelink-fingerprinting.png" alt="Application fingerprinting through NVLink latency traces" class="w-full h-full object-contain p-2" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Project 3: LLM Inference Leakage -->
-  <div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden hover-lift reveal stagger-3">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-      <div class="p-8">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="material-symbols-outlined text-secondary" aria-hidden="true">psychology</span>
-          <span class="font-label-caps text-label-caps text-secondary uppercase">Project 3</span>
+  <div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden hover-lift reveal stagger-3" id="project3">
+    <div class="p-6 cursor-pointer" onclick="toggleProject('project3-content', 'project3-icon')">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-secondary text-2xl" aria-hidden="true">psychology</span>
+          <h3 class="font-headline-md text-headline-md text-primary">Side-Channel Leakage in LLM Inference on GPUs</h3>
         </div>
-        <h3 class="font-headline-md text-headline-md text-primary mb-3">Side-Channel Leakage in LLM Inference on GPUs</h3>
-        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
-          <strong>Problem:</strong> LLMs are increasingly deployed on shared GPU infrastructure. Can an unprivileged observer—sharing a GPU with an LLM inference server—infer the model being executed or the semantic category of user prompts, without any direct memory access?
-        </p>
-        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
-          <strong>Approach:</strong> We collected CUDA runtime activity, kernel execution patterns, and GPU telemetry traces from seven LLMs (OPT, Mistral, Phi-2, Qwen2, TinyLlama, Falcon) under <em>realistic</em> conditions: variable input lengths, stochastic decoding, and natural termination. Previous work had only studied deterministic decoding, which does not reflect real deployments. We evaluated two tasks: prompt-family inference and model fingerprinting, using multiple ML classifiers and feature groups.
-        </p>
-        <p class="font-body-sm text-on-surface-variant leading-relaxed mb-5">
-          <strong>Key finding:</strong> An asymmetry exists between prompt- and model-level leakage. Model-level execution signatures are stable and highly distinctive—difficult to obscure even under stochastic decoding—while prompt-level signals are more affected by runtime variability.
-        </p>
-        <div class="grid grid-cols-3 gap-3 mb-5">
-          <div class="bg-surface-container-low rounded-xl p-3 text-center">
-            <div class="font-headline-md text-headline-md text-primary font-bold">99.94%</div>
-            <div class="text-xs text-on-surface-variant mt-1">Model fingerprinting</div>
-          </div>
-          <div class="bg-surface-container-low rounded-xl p-3 text-center">
-            <div class="font-headline-md text-headline-md text-primary font-bold">7 LLMs</div>
-            <div class="text-xs text-on-surface-variant mt-1">Models evaluated</div>
-          </div>
-          <div class="bg-surface-container-low rounded-xl p-3 text-center">
-            <div class="font-headline-md text-headline-md text-primary font-bold">Realistic</div>
-            <div class="text-xs text-on-surface-variant mt-1">Stochastic decoding</div>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-3">
-          <span class="font-label-caps text-label-caps border border-outline-variant px-4 py-2 rounded-xl text-on-surface-variant bg-surface-container-low">Under Review</span>
-          <!-- Uncomment when preprint is available: -->
-          <!-- <a class="font-label-caps text-label-caps border border-outline px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all text-primary" href="YOUR_ARXIV_LINK" target="_blank">Preprint →</a> -->
-        </div>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" id="project3-icon">expand_more</span>
       </div>
-      <!-- Figure placeholder: right column -->
-      <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
-        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
-           style="min-height:180px;">
-          <img
-            src="images/llm-trace-pipeline.png"
-            alt="GPU trace collection and analysis pipeline for LLM inference"
-            class="w-full h-full object-contain p-2"
-          />
-        </div>
-        <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden"
-           style="min-height:180px;">
-          <img
-            src="images/llm-distinct-signatures.png"
-            alt="Different models produce distinct execution signatures"
-            class="w-full h-full object-contain p-2"
-          />
+      <p class="text-sm text-on-surface-variant mt-2 max-w-2xl">99.94% model fingerprinting across 7 LLMs under realistic stochastic decoding</p>
+    </div>
+    
+    <div id="project3-content" class="expandable-project hidden">
+      <div class="border-t border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+          <div class="p-8">
+            <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+              <strong>Problem:</strong> LLMs are increasingly deployed on shared GPU infrastructure. Can an unprivileged observer infer the model being executed or the semantic category of user prompts?
+            </p>
+            <p class="font-body-sm text-on-surface-variant leading-relaxed mb-4">
+              <strong>Approach:</strong> We collected CUDA runtime activity, kernel execution patterns, and GPU telemetry traces from seven LLMs (OPT, Mistral, Phi-2, Qwen2, TinyLlama, Falcon) under <em>realistic</em> conditions: variable input lengths, stochastic decoding, and natural termination.
+            </p>
+            <p class="font-body-sm text-on-surface-variant leading-relaxed mb-5">
+              <strong>Key finding:</strong> Model-level execution signatures are stable and highly distinctive—difficult to obscure even under stochastic decoding—while prompt-level signals are more affected by runtime variability.
+            </p>
+            <div class="grid grid-cols-3 gap-3 mb-5">
+              <div class="bg-surface-container-low rounded-xl p-3 text-center">
+                <div class="font-headline-md text-headline-md text-primary font-bold">99.94%</div>
+                <div class="text-xs text-on-surface-variant mt-1">Model fingerprinting</div>
+              </div>
+              <div class="bg-surface-container-low rounded-xl p-3 text-center">
+                <div class="font-headline-md text-headline-md text-primary font-bold">7 LLMs</div>
+                <div class="text-xs text-on-surface-variant mt-1">Models evaluated</div>
+              </div>
+              <div class="bg-surface-container-low rounded-xl p-3 text-center">
+                <div class="font-headline-md text-headline-md text-primary font-bold">Realistic</div>
+                <div class="text-xs text-on-surface-variant mt-1">Stochastic decoding</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <span class="font-label-caps text-label-caps border border-outline-variant px-4 py-2 rounded-xl text-on-surface-variant bg-surface-container-low">Under Review</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col gap-4 bg-surface-container-lowest border-l border-outline-variant">
+            <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden" style="min-height:180px;">
+              <img src="images/llm-trace-pipeline.png" alt="GPU trace collection pipeline" class="w-full h-full object-contain p-2" />
+            </div>
+            <div class="flex-1 flex items-center justify-center bg-white rounded-xl border border-outline-variant overflow-hidden" style="min-height:180px;">
+              <img src="images/llm-distinct-signatures.png" alt="Distinct model execution signatures" class="w-full h-full object-contain p-2" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -996,6 +991,20 @@ function copyEmail() {
     icon.textContent = "content_copy";
     toast.classList.add("opacity-0");
   }, 2000);
+}
+
+// Toggle project expand/collapse
+function toggleProject(contentId, iconId) {
+  const content = document.getElementById(contentId);
+  const icon = document.getElementById(iconId);
+  
+  if (content.classList.contains('hidden')) {
+    content.classList.remove('hidden');
+    icon.style.transform = 'rotate(180deg)';
+  } else {
+    content.classList.add('hidden');
+    icon.style.transform = 'rotate(0deg)';
+  }
 }
 
 </script>
