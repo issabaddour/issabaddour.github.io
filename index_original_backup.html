@@ -336,7 +336,7 @@
 </div>
 </div>
 <div class="md:col-span-5 flex justify-center reveal stagger-4">
-<div class="relative w-full max-w-[260px] aspect-square rounded-xl overflow-hidden shadow-lg transition-transform duration-500 hover:scale-[1.02]">
+<div class="relative w-full max-w-[400px] aspect-square rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
 <img alt="Issa Baddour" class="w-full h-full object-cover" src="images/profile.jpg"/>
 <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl"></div>
 </div>
@@ -355,19 +355,23 @@
                     </p>
 </div>
 </section>
+<!-- Metrics Strip -->
 <!-- Research Interests -->
-<section class="bg-surface-container-lowest py-10" id="research">
-<div class="max-w-container-max mx-auto px-gutter reveal">
-<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Research Interests</span>
-<div class="flex flex-wrap gap-2 mt-3">
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">GPU Security</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">Microarchitectural Side Channels</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">Covert Channels</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">NVLink / Interconnect Security</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">LLM Inference Security</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">Side-Channel Analysis</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">Trusted Execution Environments</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">High-Performance Computing</span>
+<section class="bg-surface-container-lowest py-section-gap" id="research">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-element-gap text-center md:text-left reveal">
+<span class="font-label-caps text-label-caps text-secondary">Expertise</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Research Interests</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-1"><span class="material-symbols-outlined text-secondary">memory</span><h3 class="font-body-md font-bold text-primary mt-2">GPU Security</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-2"><span class="material-symbols-outlined text-secondary">security</span><h3 class="font-body-md font-bold text-primary mt-2">Microarchitectural Side Channels</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-3"><span class="material-symbols-outlined text-secondary">vitals</span><h3 class="font-body-md font-bold text-primary mt-2">Covert Channels</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-4"><span class="material-symbols-outlined text-secondary">hub</span><h3 class="font-body-md font-bold text-primary mt-2">NVLink / Interconnect Security</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-5"><span class="material-symbols-outlined text-secondary">psychology</span><h3 class="font-body-md font-bold text-primary mt-2">LLM Inference Security</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-6"><span class="material-symbols-outlined text-secondary">query_stats</span><h3 class="font-body-md font-bold text-primary mt-2">Side-Channel Analysis</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-7"><span class="material-symbols-outlined text-secondary">hardware</span><h3 class="font-body-md font-bold text-primary mt-2">Trusted Execution Environments</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded-2xl reveal stagger-8"><span class="material-symbols-outlined text-secondary">speed</span><h3 class="font-body-md font-bold text-primary mt-2">High-Performance Computing</h3></div>
 </div>
 </div>
 </section>
@@ -756,7 +760,16 @@
 </div>
 </div>
 </section>
-
+<!-- Skills -->
+<section class="max-w-container-max mx-auto px-gutter py-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-10 reveal">Technical Skills</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-1"><h3 class="font-label-caps text-label-caps text-primary mb-3">Languages</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">C/C++</span><span class="skill-badge px-2 py-1 text-xs rounded-full">CUDA</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Python</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Bash</span><span class="skill-badge px-2 py-1 text-xs rounded-full">SQL</span></div></div>
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-2"><h3 class="font-label-caps text-label-caps text-primary mb-3">GPU Systems</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">CUDA Kernels</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Streams</span><span class="skill-badge px-2 py-1 text-xs rounded-full">NVLink</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Multi-GPU</span></div></div>
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-3"><h3 class="font-label-caps text-label-caps text-primary mb-3">Profiling</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">Nsight Systems</span><span class="skill-badge px-2 py-1 text-xs rounded-full">Nsight Compute</span><span class="skill-badge px-2 py-1 text-xs rounded-full">CUPTI</span><span class="skill-badge px-2 py-1 text-xs rounded-full">NVTX</span></div></div>
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-4"><h3 class="font-label-caps text-label-caps text-primary mb-3">Cloud &amp; Systems</h3><div class="flex flex-wrap gap-2"><span class="skill-badge px-2 py-1 text-xs rounded-full">Docker</span><span class="skill-badge px-2 py-1 text-xs rounded-full">K8s</span><span class="skill-badge px-2 py-1 text-xs rounded-full">AWS (EC2/S3)</span></div></div>
+</div>
+</section>
 <!-- Awards & Service -->
 <section class="bg-surface-container-low py-section-gap">
 <div class="max-w-container-max mx-auto px-gutter">

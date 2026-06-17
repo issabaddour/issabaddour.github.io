@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Issa Baddour | PhD Candidate in GPU Security &amp; AI Infrastructure</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script>
       tailwind.config = {
@@ -67,7 +67,9 @@
               "stack-md": "1rem", "container-max": "1140px", "stack-sm": "0.5rem"
             },
             fontFamily: {
-              "body-lg": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"],
+              "body-lg": ['"Source Serif 4"', "Georgia", "serif"],
+              "body-sm": ['"Source Serif 4"', "Georgia", "serif"],
+              "body-md": ['"Source Serif 4"', "Georgia", "serif"],
               "display": ["Playfair Display"], "label-caps": ["Inter"],
               "headline-lg": ["Playfair Display"], "mono": ["JetBrains Mono"],
               "headline-lg-mobile": ["Playfair Display"], "headline-md": ["Playfair Display"]
@@ -88,12 +90,48 @@
       }
     </script>
 <style>
+  /* Academic base */
+  body { background: #faf9f7 !important; }
+  .bg-surface { background-color: #faf9f7 !important; }
+  .bg-background { background-color: #faf9f7 !important; }
+
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     display: inline-block;
     vertical-align: middle;
     line-height: 1;
   }
+
+  /* Venue badges */
+  .venue-badge {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+  .badge-journal { background: #ebf4ff; color: #2c5282; border: 1px solid #bee3f8; }
+  .badge-conf    { background: #f0fff4; color: #276749; border: 1px solid #9ae6b4; }
+  .badge-wip     { background: #fffbeb; color: #744210; border: 1px solid #fbd38d; }
+
+  /* Skill pill — monospace */
+  .skill-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    background: #f0ede8;
+    border: 1px solid #d6d0c8;
+    color: #1a1a2e;
+    padding: 3px 10px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  /* Publication card accent border */
+  .pub-card-accent { border: 1px solid #c5c6cd; transition: border-color 0.2s; }
+  .pub-card-accent:hover { border-color: #2c5282; }
   .nav-blur { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
   .skill-badge {
@@ -123,12 +161,35 @@
   .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
   .hover-lift {
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
   .hover-lift:hover {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.10), 0 8px 15px -8px rgba(0,0,0,0.08);
+    border-color: #091426 !important;
+    box-shadow: 0 4px 16px -4px rgba(9,20,38,0.10);
   }
+
+  /* BibTeX cite modal */
+  .cite-modal { display: none; }
+  .cite-modal.open { display: flex; }
+
+  /* Cite button */
+  .cite-btn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: #091426;
+    border: 1px solid #75777d;
+    padding: 3px 10px;
+    border-radius: 4px;
+    background: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .cite-btn:hover { background: #091426; color: #fff; }
 
   .reveal {
     opacity: 0;
@@ -265,7 +326,9 @@
 <script data-id="a88f7746-35c3-4814-9e58-48ec6c0e9e2f" data-utcoffset="6" src="https://cdn.counter.dev/script.js"></script>
 </head>
 <body class="bg-surface font-body-md text-on-surface">
-<header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-sm px-gutter flex justify-center items-center h-16 border-b border-outline-variant">
+<!-- Top accent rule -->
+<div style="height:3px;background:#091426;width:100%;position:fixed;top:0;left:0;z-index:60;"></div>
+<header class="fixed top-[3px] w-full z-50 bg-surface/95 backdrop-blur-sm px-gutter flex justify-center items-center h-14 border-b border-outline-variant">
 <div class="max-w-container-max w-full flex justify-between items-center">
 <a class="font-headline-md text-headline-md font-bold text-primary" href="#">Issa Baddour</a>
 <nav class="hidden md:flex items-center space-x-8" id="main-nav">
@@ -274,7 +337,7 @@
 <a class="nav-link font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#publications">Publications</a>
 <a class="nav-link font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a><a class="nav-link font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#cv">Education</a>
 </nav>
-<a class="bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps rounded-xl transition-all hover:opacity-90" href="#contact">Contact Me</a>
+<a class="border border-primary text-primary px-5 py-1.5 font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all" href="#contact">Contact</a>
 <!-- Hamburger (mobile only) -->
       <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 rounded-lg hover:bg-surface-container transition-colors" id="hamburger">
         <span class="block w-5 h-0.5 bg-primary transition-all" id="ham-line1"></span>
@@ -294,18 +357,26 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<main class="pt-16 overflow-hidden">
-<!-- Hero Section -->
+<main class="overflow-hidden" style="padding-top:59px;">
 <section class="hero-glow" id="hero">
-<div class="max-w-container-max mx-auto px-gutter py-section-gap grid grid-cols-1 md:grid-cols-12 gap-12 items-center reveal">
-<div class="md:col-span-7 space-y-stack-md">
+<div class="max-w-container-max mx-auto px-gutter py-12 grid grid-cols-1 md:grid-cols-12 gap-10 items-start reveal">
+
+<!-- Photo — sidebar style, small and formal -->
+<div class="md:col-span-3 flex justify-center md:justify-start md:pt-2 reveal stagger-1">
+  <div class="w-36 h-36 md:w-44 md:h-44 rounded-sm overflow-hidden shadow-md ring-1 ring-black/10 shrink-0">
+    <img alt="Issa Baddour" class="w-full h-full object-cover" src="images/profile.jpg"/>
+  </div>
+</div>
+
+<!-- Bio -->
+<div class="md:col-span-9 space-y-stack-md">
 <div class="space-y-4">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block reveal stagger-1">PhD Candidate • IIT Jodhpur</span>
 <h1 class="font-display text-display text-primary leading-tight reveal stagger-2">Issa Baddour</h1>
 <h2 class="font-headline-md text-headline-md text-secondary leading-relaxed reveal stagger-3">GPU Security | Microarchitectural Side Channels | AI Infrastructure</h2>
 <div class="flex flex-wrap gap-2 mt-3 reveal stagger-4">
-<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">📢 Seeking Postdoc Positions (2026)</span>
-<span class="bg-tertiary-fixed text-tertiary-container px-3 py-1 rounded-full text-sm">Open to Collaborate</span>
+<span class="venue-badge badge-wip">📢 Seeking Postdoc Positions (2026)</span>
+<span class="venue-badge badge-conf">Open to Collaborate</span>
 </div>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mt-4 leading-relaxed reveal stagger-5">
                         My research exposes and mitigates information leakage in GPU systems across three layers: microarchitectural resources, interconnect fabrics (NVLink), and LLM inference. I'm now seeking postdoctoral positions to advance <strong>security of AI infrastructure</strong>.
@@ -323,51 +394,49 @@
        <span class="material-symbols-outlined text-sm">open_in_new</span>
 </a>
 </p>
-<div class="flex flex-wrap gap-4 pt-4 reveal stagger-7">
-<a class="flex items-center gap-2 border border-outline px-6 py-3 font-label-caps text-label-caps text-primary hover:bg-surface-container-low transition-all rounded-xl" href="https://scholar.google.com/citations?user=Lo16oyMAAAAJ&amp;hl=en" target="_blank">
-<span class="material-symbols-outlined">school</span> Google Scholar
+<div class="flex flex-wrap gap-3 pt-4 reveal stagger-7">
+<a class="flex items-center gap-2 border border-outline px-4 py-2 font-label-caps text-label-caps text-primary hover:bg-surface-container-low transition-all rounded" href="https://scholar.google.com/citations?user=Lo16oyMAAAAJ&amp;hl=en" target="_blank">
+<span class="material-symbols-outlined text-base">school</span> Google Scholar
                     </a>
-<a class="flex items-center gap-2 border border-outline px-6 py-3 font-label-caps text-label-caps text-primary hover:bg-surface-container-low transition-all rounded-xl" href="https://www.linkedin.com/in/issabaddour/" target="_blank">
-<span class="material-symbols-outlined">business_center</span> LinkedIn
+<a class="flex items-center gap-2 border border-outline px-4 py-2 font-label-caps text-label-caps text-primary hover:bg-surface-container-low transition-all rounded" href="https://www.linkedin.com/in/issabaddour/" target="_blank">
+<span class="material-symbols-outlined text-base">business_center</span> LinkedIn
                     </a>
-<a class="flex items-center gap-2 border border-outline px-6 py-3 font-label-caps text-label-caps text-primary hover:bg-surface-container-low transition-all rounded-xl" href="https://github.com/issabaddour" target="_blank">
-<span class="material-symbols-outlined">code</span> GitHub
+<a class="flex items-center gap-2 border border-outline px-4 py-2 font-label-caps text-label-caps text-primary hover:bg-surface-container-low transition-all rounded" href="https://github.com/issabaddour" target="_blank">
+<span class="material-symbols-outlined text-base">code</span> GitHub
                     </a>
 </div>
 </div>
-<div class="md:col-span-5 flex justify-center reveal stagger-4">
-<div class="relative w-full max-w-[260px] aspect-square rounded-xl overflow-hidden shadow-lg transition-transform duration-500 hover:scale-[1.02]">
-<img alt="Issa Baddour" class="w-full h-full object-cover" src="images/profile.jpg"/>
-<div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl"></div>
-</div>
-</div>
+
 </div>
 </section>
 <!-- Research Vision -->
-<section class="bg-primary text-on-primary py-section-gap relative overflow-hidden">
-<!-- Particles -->
-<div class="absolute inset-0 pointer-events-none" id="particle-container"></div>
-<div class="max-w-container-max mx-auto px-gutter text-center relative z-10 reveal">
-<span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest block mb-4">Research Vision</span>
-<h2 class="font-headline-lg text-headline-lg mb-6">Securing the AI Infrastructure Stack</h2>
-<p class="font-body-lg max-w-3xl mx-auto opacity-90 leading-relaxed">
-                        My postdoctoral research will focus on building <strong>observability-aware security mechanisms</strong> for AI infrastructure—designing GPU systems where performance and confidentiality coexist. I aim to develop isolation primitives for multi-tenant AI clusters, addressing vulnerabilities that emerge when LLM inference, microarchitectural contention, and high-speed interconnects intersect.
-                    </p>
+<section class="border-t border-b border-outline-variant py-10" id="vision" style="background:#f0ede8;">
+<div class="max-w-container-max mx-auto px-gutter reveal">
+  <div class="border-l-4 border-primary pl-6 max-w-3xl mx-auto">
+    <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block mb-2">Research Vision · Postdoctoral Focus</span>
+    <p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+      My postdoctoral research will focus on building <strong>observability-aware security mechanisms</strong> for AI infrastructure—designing GPU systems where performance and confidentiality coexist. I aim to develop isolation primitives for multi-tenant AI clusters, addressing vulnerabilities that emerge when LLM inference, microarchitectural contention, and high-speed interconnects intersect.
+    </p>
+  </div>
 </div>
 </section>
+<!-- Metrics Strip -->
 <!-- Research Interests -->
-<section class="bg-surface-container-lowest py-10" id="research">
-<div class="max-w-container-max mx-auto px-gutter reveal">
-<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Research Interests</span>
-<div class="flex flex-wrap gap-2 mt-3">
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">GPU Security</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">Microarchitectural Side Channels</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">Covert Channels</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">NVLink / Interconnect Security</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">LLM Inference Security</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">Side-Channel Analysis</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">Trusted Execution Environments</span>
-  <span class="bg-surface border border-outline-variant px-3 py-1.5 rounded-full text-sm text-on-surface-variant">High-Performance Computing</span>
+<section class="bg-surface-container-lowest py-section-gap" id="research">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-element-gap text-center md:text-left reveal">
+<span class="font-label-caps text-label-caps text-secondary">Expertise</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Research Interests</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded reveal stagger-1"><span class="material-symbols-outlined text-secondary">memory</span><h3 class="font-body-md font-bold text-primary mt-2">GPU Security</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded reveal stagger-2"><span class="material-symbols-outlined text-secondary">security</span><h3 class="font-body-md font-bold text-primary mt-2">Microarchitectural Side Channels</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded reveal stagger-3"><span class="material-symbols-outlined text-secondary">vitals</span><h3 class="font-body-md font-bold text-primary mt-2">Covert Channels</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded reveal stagger-4"><span class="material-symbols-outlined text-secondary">hub</span><h3 class="font-body-md font-bold text-primary mt-2">NVLink / Interconnect Security</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded reveal stagger-5"><span class="material-symbols-outlined text-secondary">psychology</span><h3 class="font-body-md font-bold text-primary mt-2">LLM Inference Security</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded reveal stagger-6"><span class="material-symbols-outlined text-secondary">query_stats</span><h3 class="font-body-md font-bold text-primary mt-2">Side-Channel Analysis</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded reveal stagger-7"><span class="material-symbols-outlined text-secondary">hardware</span><h3 class="font-body-md font-bold text-primary mt-2">Trusted Execution Environments</h3></div>
+<div class="p-6 bg-surface border border-outline-variant hover-lift rounded reveal stagger-8"><span class="material-symbols-outlined text-secondary">speed</span><h3 class="font-body-md font-bold text-primary mt-2">High-Performance Computing</h3></div>
 </div>
 </div>
 </section>
@@ -391,15 +460,15 @@
 </div>
     </div>
     <div class="space-y-4">
-      <div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-2">
+      <div class="bg-surface-container-low p-6 hover-lift rounded border border-outline-variant reveal stagger-2">
         <h3 class="font-body-md font-bold text-primary mb-1">🔬 Microarchitectural Layer: 44.7 Mbps covert channel</h3>
         <p class="font-body-sm text-secondary leading-relaxed">Extended binary contention to four-level signaling on NVIDIA DGX A100. Achieved 44 Mbps (1 GPU) and 340 Mbps (8 GPUs). Behavioral randomization via SFU function combinations reduces ML detectability from 100% to 36%.</p>
       </div>
-      <div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-3">
+      <div class="bg-surface-container-low p-6 hover-lift rounded border border-outline-variant reveal stagger-3">
         <h3 class="font-body-md font-bold text-primary mb-1">🔗 Interconnect Layer: NVLink attack surface</h3>
         <p class="font-body-sm text-secondary leading-relaxed">First study to expose NVLink contention across V100, A100, and H200. Covert channel: 6.33–9.90 Kbps with negligible error rates. Application fingerprinting via NVLink latency traces: 96.2% accuracy across 25 apps. Temporal and spatial partitioning countermeasures evaluated.</p>
       </div>
-      <div class="bg-surface-container-low p-6 hover-lift rounded-2xl border border-outline-variant reveal stagger-4">
+      <div class="bg-surface-container-low p-6 hover-lift rounded border border-outline-variant reveal stagger-4">
         <h3 class="font-body-md font-bold text-primary mb-1">🤖 Application Layer: LLM inference leakage</h3>
         <p class="font-body-sm text-secondary leading-relaxed">CUDA runtime activity and GPU telemetry reveal model identity and prompt semantics. Model fingerprinting: 99.94% accuracy across 7 LLMs. Prompt-family inference: consistently above-chance across all models. First leakage study under realistic stochastic decoding.</p>
       </div>
@@ -408,7 +477,7 @@
 </section>
 
 <!-- ═══════════════════════════════ PUBLICATIONS ═══ -->
-<section class="bg-surface-container-low py-section-gap" id="publications">
+<section class="py-section-gap" id="publications" style="background:#f5f2ed;">
   <div class="max-w-container-max mx-auto px-gutter">
     <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-element-gap gap-4 reveal">
       <div>
@@ -428,16 +497,19 @@
     <!-- 2026 -->
     <div class="mb-10 reveal">
       <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2026 <span class="h-px flex-1 bg-outline-variant"></span></h3>
-      <div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+      <div class="bg-surface border border-outline-variant pub-card-accent p-5 hover-lift rounded reveal stagger-1">
         <div class="flex justify-between items-start gap-4 flex-wrap mb-3">
           <div class="max-w-2xl">
             <h4 class="font-body-md font-bold text-primary mb-1">SideLink: Exposing NVLink to Covert and Side-Channel Attacks</h4>
             <p class="font-body-sm text-on-surface-variant mb-2 leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
             <div class="flex gap-2 flex-wrap">
-              <span class="bg-surface-container px-2 py-0.5 rounded font-label-caps text-label-caps text-secondary">Journal of Hardware and Systems Security (Special Issue)</span>
+              <span class="venue-badge badge-journal">Journal of Hardware and Systems Security (Special Issue)</span>
             </div>
           </div>
+          <div class="flex flex-col items-end gap-2 shrink-0">
           <a class="font-label-caps text-label-caps border border-outline px-3 py-1 rounded hover:bg-primary hover:text-white transition-all whitespace-nowrap" href="https://link.springer.com/article/10.1007/s41635-026-00175-3" target="_blank" rel="noopener noreferrer">DOI →</a>
+          <button class="cite-btn" onclick="document.getElementById('cite-sidelink-journal').classList.add('open')"><span class="material-symbols-outlined" style="font-size:14px">format_quote</span> Cite</button>
+          </div>
         </div>
         <button class="abstract-toggle-btn" data-target="abs-sidelink-journal" aria-expanded="false">
           <span>Abstract</span>
@@ -454,16 +526,19 @@
     <!-- 2025 -->
     <div class="mb-10 reveal">
       <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2025 <span class="h-px flex-1 bg-outline-variant"></span></h3>
-      <div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+      <div class="bg-surface border border-outline-variant pub-card-accent p-5 hover-lift rounded reveal stagger-1">
         <div class="flex justify-between items-start gap-4 flex-wrap mb-3">
           <div class="max-w-2xl">
             <h4 class="font-body-md font-bold text-primary mb-1">An Improved Micro-Architectural Covert-Channel Attack on GPUs</h4>
             <p class="font-body-sm text-on-surface-variant mb-2 leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
             <div class="flex gap-2 flex-wrap">
-              <span class="bg-surface-container px-2 py-0.5 rounded font-label-caps text-label-caps text-secondary" style="color:#469e95">Journal of Hardware and Systems Security</span>
+              <span class="venue-badge badge-journal">Journal of Hardware and Systems Security</span>
             </div>
           </div>
+          <div class="flex flex-col items-end gap-2 shrink-0">
           <a class="font-label-caps text-label-caps border border-outline px-3 py-1 rounded hover:bg-primary hover:text-white transition-all whitespace-nowrap" href="https://link.springer.com/article/10.1007/s41635-025-00170-0" target="_blank" rel="noopener noreferrer">DOI →</a>
+          <button class="cite-btn" onclick="document.getElementById('cite-covert-journal').classList.add('open')"><span class="material-symbols-outlined" style="font-size:14px">format_quote</span> Cite</button>
+          </div>
         </div>
         <button class="abstract-toggle-btn" data-target="abs-covert-journal" aria-expanded="false">
           <span>Abstract</span>
@@ -480,16 +555,19 @@
     <!-- 2024 -->
     <div class="mb-10 reveal">
       <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">2024 <span class="h-px flex-1 bg-outline-variant"></span></h3>
-      <div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+      <div class="bg-surface border border-outline-variant pub-card-accent p-5 hover-lift rounded reveal stagger-1">
         <div class="flex justify-between items-start gap-4 flex-wrap mb-3">
           <div class="max-w-2xl">
             <h4 class="font-body-md font-bold text-primary mb-1">SideLink: Exposing NVLink to Covert and Side-Channel Attacks <span class="text-xs font-normal text-on-surface-variant">(Work-in-Progress)</span></h4>
             <p class="font-body-sm text-on-surface-variant mb-2 leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
             <div class="flex gap-2 flex-wrap">
-              <span class="bg-secondary-fixed px-2 py-0.5 rounded font-label-caps text-label-caps text-primary">SPACE 2024 (Conference)</span>
+              <span class="venue-badge badge-conf">SPACE 2024 (Conference)</span>
             </div>
           </div>
+          <div class="flex flex-col items-end gap-2 shrink-0">
           <a class="font-label-caps text-label-caps border border-outline px-3 py-1 rounded hover:bg-primary hover:text-white transition-all whitespace-nowrap" href="https://link.springer.com/chapter/10.1007/978-3-031-80408-3_2" target="_blank" rel="noopener noreferrer">DOI →</a>
+          <button class="cite-btn" onclick="document.getElementById('cite-sidelink-space').classList.add('open')"><span class="material-symbols-outlined" style="font-size:14px">format_quote</span> Cite</button>
+          </div>
         </div>
         <button class="abstract-toggle-btn" data-target="abs-sidelink-conf" aria-expanded="false">
           <span>Abstract</span>
@@ -506,13 +584,13 @@
     <!-- Under Submission -->
     <div class="reveal">
       <h3 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-4">Under Submission <span class="h-px flex-1 bg-outline-variant"></span></h3>
-      <div class="bg-surface border border-outline-variant p-5 hover-lift rounded-2xl reveal stagger-1">
+      <div class="bg-surface border border-outline-variant pub-card-accent p-5 hover-lift rounded reveal stagger-1">
         <div class="flex justify-between items-start gap-4 flex-wrap mb-3">
           <div class="max-w-2xl">
             <h4 class="font-body-md font-bold text-primary mb-1">Side-Channel Leakage in Large Language Model Inference on GPUs</h4>
             <p class="font-body-sm text-on-surface-variant mb-2 leading-relaxed"><strong>Issa Baddour</strong>, Somitra Kumar Sanadhya, Dip Sankar Banerjee</p>
             <div class="flex gap-2 flex-wrap">
-              <span class="bg-surface-container-high px-2 py-0.5 rounded font-label-caps text-label-caps text-on-surface-variant">Under Review</span>
+              <span class="venue-badge badge-wip">Under Review</span>
             </div>
           </div>
         </div>
@@ -756,7 +834,16 @@
 </div>
 </div>
 </section>
-
+<!-- Skills -->
+<section class="max-w-container-max mx-auto px-gutter py-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-10 reveal">Technical Skills</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-1"><h3 class="font-label-caps text-label-caps text-primary mb-3">Languages</h3><div class="flex flex-wrap gap-2"><span class="skill-pill">C/C++</span><span class="skill-pill">CUDA</span><span class="skill-pill">Python</span><span class="skill-pill">Bash</span><span class="skill-pill">SQL</span></div></div>
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-2"><h3 class="font-label-caps text-label-caps text-primary mb-3">GPU Systems</h3><div class="flex flex-wrap gap-2"><span class="skill-pill">CUDA Kernels</span><span class="skill-pill">Streams</span><span class="skill-pill">NVLink</span><span class="skill-pill">Multi-GPU</span></div></div>
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-3"><h3 class="font-label-caps text-label-caps text-primary mb-3">Profiling</h3><div class="flex flex-wrap gap-2"><span class="skill-pill">Nsight Systems</span><span class="skill-pill">Nsight Compute</span><span class="skill-pill">CUPTI</span><span class="skill-pill">NVTX</span></div></div>
+<div class="bg-surface p-5 border border-outline-variant hover-lift rounded-2xl reveal stagger-4"><h3 class="font-label-caps text-label-caps text-primary mb-3">Cloud &amp; Systems</h3><div class="flex flex-wrap gap-2"><span class="skill-pill">Docker</span><span class="skill-pill">K8s</span><span class="skill-pill">AWS (EC2/S3)</span></div></div>
+</div>
+</section>
 <!-- Awards & Service -->
 <section class="bg-surface-container-low py-section-gap">
 <div class="max-w-container-max mx-auto px-gutter">
@@ -849,6 +936,51 @@
   </div>
 </footer>
 </main>
+<!-- ── BibTeX Cite Modals ── -->
+<div id="cite-sidelink-journal" class="cite-modal fixed inset-0 z-50 items-center justify-center bg-black/50 backdrop-blur-sm p-4" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="bg-white max-w-lg w-full p-6 shadow-2xl rounded-lg relative">
+    <button onclick="document.getElementById('cite-sidelink-journal').classList.remove('open')" class="absolute top-3 right-3 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+    <h3 class="font-headline-md text-headline-md text-primary mb-3">BibTeX</h3>
+    <pre id="bib-sidelink-journal" class="font-mono text-xs bg-surface-container-low p-4 overflow-x-auto leading-relaxed rounded border border-outline-variant">@article{baddour2026sidelink,
+  author  = {Baddour, Issa and Sanadhya, Somitra Kumar and Banerjee, Dip Sankar},
+  title   = {{SideLink}: Exposing {NVLink} to Covert and Side-Channel Attacks},
+  journal = {Journal of Hardware and Systems Security},
+  year    = {2026},
+  doi     = {10.1007/s41635-026-00175-3}
+}</pre>
+    <button onclick="copyBib('bib-sidelink-journal',this)" class="mt-3 cite-btn">Copy</button>
+  </div>
+</div>
+
+<div id="cite-covert-journal" class="cite-modal fixed inset-0 z-50 items-center justify-center bg-black/50 backdrop-blur-sm p-4" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="bg-white max-w-lg w-full p-6 shadow-2xl rounded-lg relative">
+    <button onclick="document.getElementById('cite-covert-journal').classList.remove('open')" class="absolute top-3 right-3 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+    <h3 class="font-headline-md text-headline-md text-primary mb-3">BibTeX</h3>
+    <pre id="bib-covert-journal" class="font-mono text-xs bg-surface-container-low p-4 overflow-x-auto leading-relaxed rounded border border-outline-variant">@article{baddour2025covert,
+  author  = {Baddour, Issa and Sanadhya, Somitra Kumar and Banerjee, Dip Sankar},
+  title   = {An Improved Micro-Architectural Covert-Channel Attack on {GPU}s},
+  journal = {Journal of Hardware and Systems Security},
+  year    = {2025},
+  doi     = {10.1007/s41635-025-00170-0}
+}</pre>
+    <button onclick="copyBib('bib-covert-journal',this)" class="mt-3 cite-btn">Copy</button>
+  </div>
+</div>
+
+<div id="cite-sidelink-space" class="cite-modal fixed inset-0 z-50 items-center justify-center bg-black/50 backdrop-blur-sm p-4" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="bg-white max-w-lg w-full p-6 shadow-2xl rounded-lg relative">
+    <button onclick="document.getElementById('cite-sidelink-space').classList.remove('open')" class="absolute top-3 right-3 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+    <h3 class="font-headline-md text-headline-md text-primary mb-3">BibTeX</h3>
+    <pre id="bib-sidelink-space" class="font-mono text-xs bg-surface-container-low p-4 overflow-x-auto leading-relaxed rounded border border-outline-variant">@inproceedings{baddour2024sidelink,
+  author    = {Baddour, Issa and Sanadhya, Somitra Kumar and Banerjee, Dip Sankar},
+  title     = {{SideLink}: Exposing {NVLink} to Covert and Side-Channel Attacks},
+  booktitle = {Proceedings of SPACE 2024},
+  year      = {2024},
+  doi       = {10.1007/978-3-031-80408-3_2}
+}</pre>
+    <button onclick="copyBib('bib-sidelink-space',this)" class="mt-3 cite-btn">Copy</button>
+  </div>
+</div>
 <script>
 // Mouse tracking Hero Glow
 const hero = document.getElementById('hero');
@@ -861,19 +993,8 @@ if (hero) {
     });
 }
 
-// Particle Background Generation
-const particleContainer = document.getElementById('particle-container');
-if (particleContainer) {
-    for (let i = 0; i < 20; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = `${Math.random() * 100}%`;
-        particle.style.setProperty('--duration', `${5 + Math.random() * 10}s`);
-        particle.style.setProperty('--drift', `${(Math.random() - 0.5) * 100}px`);
-        particle.style.animationDelay = `${Math.random() * 5}s`;
-        particleContainer.appendChild(particle);
-    }
-}
+// Particle Background Generation — removed (not needed for academic audience)
+
 
 // Intersection Observer for Scroll Animations & Navigation Highlight
 const navLinks = document.querySelectorAll('.nav-link');
@@ -980,7 +1101,16 @@ function copyEmail() {
   }, 2000);
 }
 
-// Toggle project expand/collapse
+// Copy BibTeX
+function copyBib(preId, btn) {
+  const text = document.getElementById(preId).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = orig, 1800);
+  });
+}
+
 function toggleProject(contentId, iconId) {
   const content = document.getElementById(contentId);
   const icon = document.getElementById(iconId);
