@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>وعد بدور | معلمة لغة عربية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e2e2e2",
+                        "on-background": "#1a1c1c",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#d6e3ff",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-container": "#86a0cd",
+                        "primary-container": "#1a365d",
+                        "primary": "#002045",
+                        "on-primary-fixed": "#001b3c",
+                        "surface-dim": "#dadada",
+                        "outline-variant": "#c4c6cf",
+                        "on-tertiary-fixed": "#271900",
+                        "on-secondary-fixed-variant": "#004f50",
+                        "secondary-container": "#a2eded",
+                        "secondary": "#13696a",
+                        "inverse-surface": "#2f3131",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#adc7f7",
+                        "outline": "#74777f",
+                        "surface-tint": "#455f88",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#adc7f7",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#2d1d00",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-container-low": "#f3f3f4",
+                        "tertiary-fixed-dim": "#f8bc4b",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "on-secondary-fixed": "#002020",
+                        "on-tertiary-container": "#cb9524",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "tertiary-fixed": "#ffdeaa",
+                        "on-surface-variant": "#43474e",
+                        "secondary-fixed": "#a5eff0",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#493100",
+                        "on-secondary-container": "#1a6d6e",
+                        "surface-variant": "#e2e2e2",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#89d3d4",
+                        "background": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1120px",
+                        "section-padding-mobile": "40px",
+                        "section-padding-desktop": "72px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Cairo"],
+                        "display-lg": ["Cairo"],
+                        "label-caps": ["Tajawal"],
+                        "display-lg-mobile": ["Cairo"],
+                        "headline-md": ["Cairo"],
+                        "body-lg": ["Tajawal"],
+                        "body-md": ["Tajawal"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["13px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .arabic-motif {
+            background-image: radial-gradient(circle at 2px 2px, #cb9524 1px, transparent 0);
+            background-size: 40px 40px;
+            opacity: 0.05;
+        }
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+        }
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 2px solid #13696a;
+            outline-offset: 2px;
+        }
+        /* RTL: Arabic script doesn't use letter-tracking or uppercase transforms */
+        html[dir="rtl"] * {
+            letter-spacing: 0 !important;
+        }
+        html[dir="rtl"] .uppercase {
+            text-transform: none;
+        }
+        html[dir="rtl"] .italic {
+            font-style: normal;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-gutter h-16 z-50 bg-surface/95 backdrop-blur-sm full-width top-0 sticky border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<a href="#hero" class="font-headline-sm text-headline-sm text-primary">وعد بدور</a>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-secondary font-label-caps transition-colors" href="#about">نبذة</a>
+<a class="text-on-surface-variant hover:text-secondary font-label-caps transition-colors" href="#philosophy">فلسفتي</a>
+<a class="text-on-surface-variant hover:text-secondary font-label-caps transition-colors" href="#experience">الخبرات</a>
+<a class="text-on-surface-variant hover:text-secondary font-label-caps transition-colors" href="#education">المؤهلات</a>
+<a class="text-on-surface-variant hover:text-secondary font-label-caps transition-colors" href="#contact">تواصل معي</a>
+</nav>
+<div class="flex items-center gap-3">
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn"
+            class="md:hidden text-primary w-10 h-10 flex items-center justify-center -ml-2"
+            aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="material-symbols-outlined">
+            menu
+        </span>
+    </button>
+<a href="waad.html" hreflang="en" class="hidden sm:flex items-center gap-1.5 text-on-surface-variant hover:text-secondary font-label-caps text-xs transition-colors px-6 py-2 rounded-full">
+    English
+</a>
+<a href="/resources/Waad_Baddour_CV-ar.pdf" download class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-xs tracking-widest hover:bg-primary-container transition-all active:scale-95 shadow-sm">
+                السيرة الذاتية
+            </a>
+</div>
+</header>
+<!-- Mobile menu backdrop -->
+<div id="mobile-menu-backdrop" class="hidden md:hidden fixed inset-0 bg-primary/40 backdrop-blur-sm z-40"></div>
+<!-- Mobile menu drawer -->
+<div id="mobile-menu"
+     class="md:hidden fixed top-0 left-0 bottom-0 w-72 max-w-[80vw] bg-white z-50 shadow-2xl -translate-x-full transition-transform duration-300 ease-out flex flex-col">
+    <div class="flex items-center justify-between h-16 px-6 border-b border-outline-variant">
+        <span class="font-headline-sm text-primary">القائمة</span>
+        <button id="menu-close-btn" class="text-primary w-10 h-10 flex items-center justify-center -ml-2" aria-label="إغلاق القائمة">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <nav class="flex flex-col p-3">
+        <a href="#about" class="flex items-center gap-3 px-4 py-3.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-secondary transition-colors font-label-caps">
+            <span class="material-symbols-outlined text-xl">person</span> نبذة
+        </a>
+        <a href="#philosophy" class="flex items-center gap-3 px-4 py-3.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-secondary transition-colors font-label-caps">
+            <span class="material-symbols-outlined text-xl">psychology</span> فلسفتي
+        </a>
+        <a href="#experience" class="flex items-center gap-3 px-4 py-3.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-secondary transition-colors font-label-caps">
+            <span class="material-symbols-outlined text-xl">work</span> الخبرات
+        </a>
+        <a href="#education" class="flex items-center gap-3 px-4 py-3.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-secondary transition-colors font-label-caps">
+            <span class="material-symbols-outlined text-xl">school</span> المؤهلات
+        </a>
+        <a href="#contact" class="flex items-center gap-3 px-4 py-3.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-secondary transition-colors font-label-caps">
+            <span class="material-symbols-outlined text-xl">mail</span> تواصل معي
+        </a>
+    </nav>
+    <div class="mt-auto p-6 border-t border-outline-variant space-y-3">
+        <a href="waad.html" hreflang="en" class="flex items-center gap-2 text-on-surface-variant hover:text-secondary font-label-caps text-xs transition-colors">
+            <span class="material-symbols-outlined text-base">language</span>
+            English (الإنجليزية)
+        </a>
+        <a href="mailto:waadbadour66@gmail.com" class="block font-label-caps text-xs text-on-surface-variant" dir="ltr">waadbadour66@gmail.com</a>
+    </div>
+</div>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[68vh] flex items-center py-section-padding-desktop overflow-hidden" id="hero">
+<div class="absolute inset-0 arabic-motif pointer-events-none"></div>
+<div class="max-w-[1120px] mx-auto px-gutter w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-6">
+<span class="font-label-caps text-secondary uppercase">معلمة لغة عربية</span>
+<h1 class="font-display-lg text-display-lg text-primary leading-tight">
+                        الارتقاء بتجربة التعلّم من خلال <span class="text-on-tertiary-container">اللغة العربية</span> وتعليم محوره الطالب
+                    </h1>
+<p class="font-body-lg text-on-surface-variant max-w-lg">
+                        أكثر من 14 عامًا في تدريس اللغة العربية وآدابها ضمن وزارة التربية السورية، مع شهادة متخصصة في تعليم العربية للناطقين بغيرها.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a href="Waad_Baddour_CV-ar.pdf" download class="bg-primary text-on-primary px-8 py-4 rounded-none font-label-caps hover:shadow-lg transition-all flex items-center gap-3">
+                            تحميل السيرة الذاتية
+                            <span class="material-symbols-outlined text-sm">download</span>
+</a>
+<a href="#contact" class="border border-secondary text-secondary px-8 py-4 rounded-none font-label-caps hover:bg-secondary-container transition-all">
+                            تواصل معي
+                        </a>
+</div>
+</div>
+<div class="relative w-full max-w-[420px] mx-auto">
+<div class="absolute inset-0 border-2 border-tertiary-fixed-dim z-0 -translate-x-4 translate-y-4"></div>
+<div class="relative z-10 aspect-[4/5] bg-surface-container-high overflow-hidden shadow-2xl flex items-center justify-center">
+<!-- Placeholder until a real portrait is supplied -->
+<img
+  src="/resources/profile.png"
+  alt="الصورة الشخصية"
+  class="w-full h-full object-cover"
+/>
+</div>
+<div class="absolute -bottom-4 -left-4 bg-surface-container-lowest p-6 shadow-xl z-20 border border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="text-4xl font-headline-md text-on-tertiary-container">+14</span>
+<div class="text-xs font-label-caps text-on-surface-variant leading-tight">عاماً من<br/>الخبرة التعليمية</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="bg-surface-container-low py-section-padding-desktop" id="about">
+<div class="max-w-[1120px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+<div class="space-y-4">
+<h2 class="font-headline-md text-display-lg-mobile text-primary">أكثر من عقد من العطاء في الصف الدراسي</h2>
+<div class="w-20 h-1 bg-secondary"></div>
+</div>
+<div class="space-y-6 font-body-md text-on-surface-variant">
+<p class="text-body-lg leading-relaxed text-on-surface">
+                        بخبرة تتجاوز 14 عامًا في تدريس اللغة العربية وآدابها ضمن وزارة التربية السورية، أتخصص في المنهج التواصلي في التدريس، مع تركيز خاص على تنمية مهارات التعبير الشفهي لدى طلاب من خلفيات متنوعة. أحمل شهادة في تعليم العربية للناطقين بغيرها، وأُتم حاليًا درجة الماجستير في دمج التكنولوجيا في التعليم.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-secondary">groups</span>
+<div>
+<h4 class="font-bold text-on-background text-sm">إدارة الصفوف الكبيرة</h4>
+<p class="text-sm">خبرة في إشراك صفوف من 40 إلى 50 طالبًا باستخدام أساليب نشطة محورها الطالب.</p>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-secondary">school</span>
+<div>
+<h4 class="font-bold text-on-background text-sm">تصميم المناهج والتقييم</h4>
+<p class="text-sm">سجل حافل في تصميم خطط الدروس والتقييمات المتوافقة مع المعايير الوطنية للمنهج.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Teaching Philosophy Section -->
+<section class="py-section-padding-desktop bg-surface" id="philosophy">
+<div class="max-w-[1120px] mx-auto px-gutter text-center mb-10">
+<span class="font-label-caps text-secondary uppercase mb-3 block">القيم الجوهرية</span>
+<h2 class="font-headline-md text-display-lg text-primary">فلسفتي التربوية</h2>
+</div>
+<div class="max-w-[1120px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-white p-6 border border-outline-variant hover:border-secondary transition-colors group relative">
+<div class="absolute top-0 right-0 w-full h-0.5 bg-tertiary-fixed-dim"></div>
+<div class="bg-surface-container-high w-12 h-12 flex items-center justify-center mb-5 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-secondary text-2xl">psychology</span>
+</div>
+<h3 class="font-headline-sm mb-2 text-on-surface text-lg">محورها الطالب</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm">إعطاء الأولوية لاحتياجات واهتمامات كل متعلم لتعزيز الانخراط الحقيقي والدافعية الذاتية نحو إتقان اللغة.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-6 border border-outline-variant hover:border-secondary transition-colors group relative">
+<div class="absolute top-0 right-0 w-full h-0.5 bg-tertiary-fixed-dim"></div>
+<div class="bg-surface-container-high w-12 h-12 flex items-center justify-center mb-5 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-secondary text-2xl">forum</span>
+</div>
+<h3 class="font-headline-sm mb-2 text-on-surface text-lg">التميز التواصلي</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm">التركيز على الاستخدام الوظيفي للغة والتعبير الشفهي ليتمكن الطلاب من التواصل بثقة في سياقات عربية واقعية.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-6 border border-outline-variant hover:border-secondary transition-colors group relative">
+<div class="absolute top-0 right-0 w-full h-0.5 bg-tertiary-fixed-dim"></div>
+<div class="bg-surface-container-high w-12 h-12 flex items-center justify-center mb-5 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-secondary text-2xl">public</span>
+</div>
+<h3 class="font-headline-sm mb-2 text-on-surface text-lg">جسور ثقافية</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm">دمج الجوانب الثقافية والأدبية لبناء انفتاح عالمي واحترام عميق لثراء التراث العربي.</p>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="bg-surface-container-low py-section-padding-desktop" id="experience">
+<div class="max-w-[1120px] mx-auto px-gutter">
+<div class="mb-10">
+<h2 class="font-headline-md text-primary mb-2">المسيرة المهنية</h2>
+<div class="w-16 h-1 bg-secondary"></div>
+</div>
+<div class="relative space-y-0">
+<!-- Vertical Line -->
+<div class="absolute right-0 md:right-1/2 top-0 bottom-0 w-0.5 bg-secondary/20 translate-x-1/2"></div>
+<!-- Exp Item 1 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 group">
+<div class="md:text-left md:pl-12">
+<span class="font-label-caps text-on-tertiary-container block mb-1" dir="ltr">2011 — PRESENT</span>
+<h3 class="font-headline-sm text-primary">معلمة لغة عربية</h3>
+<p class="text-on-surface font-semibold">وزارة التربية السورية، دمشق</p>
+</div>
+<div class="absolute right-0 md:right-1/2 w-4 h-4 bg-tertiary-fixed-dim rounded-full translate-x-1/2 z-10 border-4 border-white"></div>
+<div class="md:pr-12">
+<ul class="text-on-surface-variant space-y-1.5 list-disc list-outside mr-4 text-sm">
+<li>تدريس اللغة العربية وآدابها لطلاب المرحلتين الإعدادية والثانوية وفق المعايير الوطنية للمنهج.</li>
+<li>تصميم خطط دروس قائمة على التعلم النشط ومحورها الطالب لصفوف من 40 إلى 50 طالبًا.</li>
+<li>دمج الأدوات الرقمية والوسائط المتعددة في التدريس، وقيادة أنشطة التعلم القائم على المشاريع والاستقصاء.</li>
+</ul>
+</div>
+</div>
+<!-- Exp Item 2 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 mb-2 group">
+<div class="md:text-left md:pl-12 md:order-1 order-none">
+<span class="font-label-caps text-on-tertiary-container block mb-1" dir="ltr">SUMMERS 2022 — 2023</span>
+<h3 class="font-headline-sm text-primary">ميسّرة تعليمية / معلمة</h3>
+<p class="text-on-surface font-semibold">بطريركية أنطاكية وسائر المشرق للروم الأرثوذكس (DERD)</p>
+</div>
+<div class="absolute right-0 md:right-1/2 w-4 h-4 bg-tertiary-fixed-dim rounded-full translate-x-1/2 z-10 border-4 border-white"></div>
+<div class="md:pr-12 md:order-2 order-none">
+<ul class="text-on-surface-variant space-y-1.5 list-disc list-outside mr-4 text-sm">
+<li>تنفيذ برامج دعم تعليمي ضمن مبادرات تعليمية مجتمعية.</li>
+<li>تطبيق أساليب تفاعلية محورها المتعلم في بيئات تعليم غير نظامي.</li>
+<li>التعاون مع فرق متعددة التخصصات لتحقيق أهداف البرنامج.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Focus Section -->
+<section class="py-10" id="research">
+<div class="max-w-[1120px] mx-auto px-gutter">
+<div class="bg-primary-container text-on-primary-container p-8 md:p-10 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-10">
+<div class="absolute top-0 left-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-7xl">school</span>
+</div>
+<div class="relative z-10 flex-1 space-y-3">
+<span class="font-label-caps text-primary-fixed border-b border-primary-fixed pb-1.5">مشروع أكاديمي</span>
+<h2 class="font-headline-md text-white text-2xl md:text-3xl leading-tight">المنحى التواصلي في تنمية مهارات التعبير الشفهي</h2>
+<p class="text-primary-fixed leading-relaxed opacity-90 text-sm">
+                            مشروع بحثي ضمن الدبلوم المهني لتقييم فعالية أساليب التدريس التواصلية في تحسين مهارات التعبير الشفهي والتواصل لدى المتعلمين.
+                        </p>
+</div>
+<div class="flex-none w-full md:w-64 bg-white/5 border border-white/10 backdrop-blur-sm p-6 flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim">menu_book</span>
+<div>
+<h4 class="font-headline-sm text-white text-base mb-1">مشروع الدبلوم</h4>
+<p class="text-xs opacity-70">أكاديمية الملكة رانيا لتدريب المعلمين، 2022</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="bg-surface py-section-padding-desktop" id="skills">
+<div class="max-w-[1120px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Teaching Skills -->
+<div>
+<h3 class="font-headline-sm text-primary mb-5 border-r-4 border-secondary pr-4 text-lg">إتقان التدريس</h3>
+<ul class="space-y-3">
+<li class="flex justify-between items-center pb-2 border-b border-outline-variant text-sm">
+<span>التعلم النشط ومحوره الطالب</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</li>
+<li class="flex justify-between items-center pb-2 border-b border-outline-variant text-sm">
+<span>تصميم التقييم التربوي</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</li>
+<li class="flex justify-between items-center pb-2 border-b border-outline-variant text-sm">
+<span>تقديم المنهج الدراسي</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</li>
+</ul>
+</div>
+<!-- Tech Skills -->
+<div>
+<h3 class="font-headline-sm text-primary mb-5 border-r-4 border-secondary pr-4 text-lg">المهارات الرقمية</h3>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-3 py-1.5 text-xs font-label-caps">Google Classroom</span>
+<span class="bg-surface-container-high px-3 py-1.5 text-xs font-label-caps">Google Meet و Zoom</span>
+<span class="bg-surface-container-high px-3 py-1.5 text-xs font-label-caps">Microsoft Office</span>
+<span class="bg-surface-container-high px-3 py-1.5 text-xs font-label-caps">أدوات التقييم الإلكتروني</span>
+</div>
+</div>
+<!-- Languages -->
+<div>
+<h3 class="font-headline-sm text-primary mb-5 border-r-4 border-secondary pr-4 text-lg">اللغات</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1.5">
+<span class="font-label-caps text-sm">العربية</span>
+<span class="text-secondary font-bold text-sm">اللغة الأم</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest">
+<div class="w-full h-full bg-primary"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1.5">
+<span class="font-label-caps text-sm">الإنجليزية</span>
+<span class="text-secondary font-bold text-sm">B2</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest">
+<div class="w-[65%] h-full bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Education Section -->
+<section class="bg-surface-container-low py-section-padding-desktop" id="education">
+<div class="max-w-[1120px] mx-auto px-gutter text-center mb-10">
+<h2 class="font-headline-md text-primary">المؤهل الأكاديمي</h2>
+</div>
+<div class="max-w-4xl mx-auto px-gutter space-y-4">
+<div class="flex flex-col md:flex-row gap-5 items-start bg-white p-5 border border-outline-variant">
+<div class="text-3xl font-headline-md text-on-tertiary-container">ماجستير</div>
+<div>
+<h4 class="font-headline-sm text-primary text-base">ماجستير في دمج التكنولوجيا في التعليم</h4>
+<p class="text-on-surface-variant text-sm">الجامعة الافتراضية السورية | 2025–2027 (قيد الدراسة)</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-5 items-start bg-white p-5 border border-outline-variant">
+<div class="text-3xl font-headline-md text-on-tertiary-container">بكالوريوس</div>
+<div>
+<h4 class="font-headline-sm text-primary text-base">بكالوريوس في اللغة العربية وآدابها</h4>
+<p class="text-on-surface-variant text-sm">كلية الآداب والعلوم الإنسانية، جامعة دمشق | 2011</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<div class="bg-white p-5 border-r-4 border-tertiary-fixed-dim shadow-sm">
+<span class="font-label-caps text-on-surface-variant block mb-1.5 text-xs">دبلوم</span>
+<h5 class="font-bold text-primary text-sm">الدبلوم المهني في تدريب المعلمين</h5>
+<p class="text-xs mt-1">أكاديمية الملكة رانيا لتدريب المعلمين، الأردن، 2022</p>
+</div>
+<div class="bg-white p-5 border-r-4 border-tertiary-fixed-dim shadow-sm">
+<span class="font-label-caps text-on-surface-variant block mb-1.5 text-xs">دبلوم</span>
+<h5 class="font-bold text-primary text-sm">دبلوم التأهيل التربوي</h5>
+<p class="text-xs mt-1">جامعة دمشق، 2016 · التقدير: جيد (66%)</p>
+</div>
+</div>
+<div class="bg-white p-5 border-r-4 border-secondary shadow-sm">
+<span class="font-label-caps text-on-surface-variant block mb-1.5 text-xs">شهادة</span>
+<h5 class="font-bold text-primary text-sm">تعليم العربية للناطقين بغيرها</h5>
+<p class="text-xs mt-1">المعهد العالي للغات، 2019 (50 ساعة)</p>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+
+<section class="py-section-padding-desktop bg-primary text-white" id="contact">
+<div class="max-w-[1120px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-12">
+
+<div class="space-y-6">
+<h2 class="font-display-lg text-white">لنتحدث عن فرص تعليمية.</h2>
+
+<p class="text-primary-fixed opacity-80 text-body-lg">
+متاحة للانتقال والعمل الدولي — للتدريس الحضوري والإلكتروني، وتعليم العربية للناطقين بغيرها، وأدوار التدريب التربوي.
+</p>
+
+<div class="space-y-3">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">mail</span>
+<a href="mailto:waadbadour66@gmail.com" class="font-label-caps hover:text-secondary-fixed transition-colors" dir="ltr">
+waadbadour66@gmail.com
+</a>
+</div>
+
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">location_on</span>
+<span class="font-label-caps">دمشق، سوريا</span>
+</div>
+</div>
+</div>
+
+<div class="bg-white/5 p-8 backdrop-blur-md border border-white/10">
+
+<form id="contact-form" class="space-y-6">
+
+<input type="hidden" name="_subject" value="رسالة جديدة من موقع وعد بدور">
+
+<div class="space-y-1.5">
+<label for="name" class="font-label-caps text-xs text-primary-fixed">الاسم</label>
+<input id="name" name="name" type="text" required
+class="w-full bg-transparent border-b border-white/20 focus:border-secondary transition-colors py-2.5 focus:outline-none text-white">
+</div>
+
+<div class="space-y-1.5">
+<label for="email" class="font-label-caps text-xs text-primary-fixed">البريد الإلكتروني</label>
+<input id="email" name="email" type="email" required
+class="w-full bg-transparent border-b border-white/20 focus:border-secondary transition-colors py-2.5 focus:outline-none text-white">
+</div>
+
+<div class="space-y-1.5">
+<label for="message" class="font-label-caps text-xs text-primary-fixed">رسالتك</label>
+<textarea id="message" name="message" rows="4" required
+class="w-full bg-transparent border-b border-white/20 focus:border-secondary transition-colors py-2.5 focus:outline-none text-white resize-none"></textarea>
+</div>
+
+<button id="submit-btn" type="submit"
+class="w-full bg-secondary-fixed text-on-secondary-fixed font-label-caps py-3.5 hover:bg-white hover:text-primary transition-all">
+إرسال الرسالة
+</button>
+
+<div id="form-status" class="hidden text-center text-sm"></div>
+
+</form>
+
+</div>
+
+</div>
+</section>
+
+
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant flex flex-col md:flex-row justify-between items-center px-gutter py-8 gap-5">
+<div class="flex flex-col gap-2">
+<span class="font-headline-sm text-primary">وعد بدور</span>
+<p class="text-label-caps text-on-surface-variant uppercase text-[10px]">معلمة لغة عربية</p>
+</div>
+<p class="font-label-caps text-[10px] text-outline-variant">
+            © 2026 وعد بدور. جميع الحقوق محفوظة.
+        </p>
+<button class="group flex items-center gap-2 font-label-caps text-secondary hover:text-primary transition-transform hover:-translate-y-1" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            العودة للأعلى
+            <span class="material-symbols-outlined text-sm">arrow_upward</span>
+</button>
+</footer>
+<script>
+        // Simple active link highlight on scroll
+        window.addEventListener('scroll', () => {
+            const sections = ['hero', 'about', 'philosophy', 'experience', 'education', 'contact'];
+            const navLinks = document.querySelectorAll('nav a');
+
+            let current = "";
+            sections.forEach(section => {
+                const el = document.getElementById(section);
+                if (!el) return;
+                const sectionTop = el.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section;
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-secondary', 'font-bold');
+                link.classList.add('text-on-surface-variant');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('text-secondary', 'font-bold');
+                    link.classList.remove('text-on-surface-variant');
+                }
+            });
+        });
+
+
+
+        const menuBtn = document.getElementById("menu-btn");
+        const menuCloseBtn = document.getElementById("menu-close-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileMenuBackdrop = document.getElementById("mobile-menu-backdrop");
+
+        function openMenu() {
+            mobileMenuBackdrop.classList.remove("hidden");
+            mobileMenu.classList.remove("-translate-x-full");
+            menuBtn.setAttribute("aria-expanded", "true");
+            document.body.classList.add("overflow-hidden");
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.add("-translate-x-full");
+            mobileMenuBackdrop.classList.add("hidden");
+            menuBtn.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("overflow-hidden");
+        }
+
+        menuBtn.addEventListener("click", openMenu);
+        menuCloseBtn.addEventListener("click", closeMenu);
+        mobileMenuBackdrop.addEventListener("click", closeMenu);
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeMenu();
+        });
+
+        document.querySelectorAll("#mobile-menu a").forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        const form = document.getElementById("contact-form"); const status = document.getElementById("form-status"); const button = document.getElementById("submit-btn"); form.addEventListener("submit", async (e) => { e.preventDefault(); button.disabled = true; button.textContent = "جارٍ الإرسال..."; const data = new FormData(form); try { const response = await fetch("https://formspree.io/f/xykarpdo", { method: "POST", body: data, headers: { Accept: "application/json" } }); if (response.ok) { status.classList.remove("hidden"); status.classList.add("text-green-300"); status.innerHTML = "✓ شكرًا لك! تم إرسال رسالتك بنجاح."; form.reset(); } else { throw new Error(); } } catch (error) { status.classList.remove("hidden"); status.classList.add("text-red-300"); status.innerHTML = "✗ حدث خطأ ما. يرجى المحاولة مرة أخرى."; } button.disabled = false; button.textContent = "إرسال الرسالة"; });
+    </script>
+</body>
+</html>
