@@ -7,18 +7,36 @@
 <style>
   body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: clamp(11px, 1.5vw, 15px);
     line-height: 1.5;
     color: #111;
-    margin: 30px 40px;
+    width: 62.6em;
+    margin: 2em auto;
     background-color: #fbfbfa;
   }
   a { color: #1155cc; }
   hr { margin: 18px 0; border: none; border-top: 1px solid #ccc; }
   ul { margin: 6px 0; padding-left: 22px; }
   li { margin-bottom: 4px; }
-  .profile-pic { float: left; margin: 0 20px 10px 0; }
-  .header-block::after { content: ""; display: table; clear: both; }
+  .header-block { text-align:center; }
+  .profile-pic { display:block; width:12em; height:12em; margin:0 auto 14px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,.15); }
+  .header-block .name { font-size:2.13em; line-height:1.2; margin:0 0 6px; }
+  .header-block .affil { font-size:1.13em; color:#333; margin-bottom:8px; }
+  .header-block .advisors, .header-block .contact { color:#444; margin-bottom:8px; }
+  .header-block .links { margin-top:10px; }
+  .header-block .links a { display:inline-block; margin:4px 5px; padding:4px 12px; border:1px solid #1155cc; border-radius:16px; text-decoration:none; font-size:0.93em; }
+  .header-block .links a:hover { background:#1155cc; color:#fff; }
+  .nav { text-align:center; margin-top:18px; }
+  .media-row { display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center; gap:14px; margin-top:10px; }
+  .media-row figure { margin:0; box-sizing:border-box; width:calc(50% - 7px); min-width:0; max-width:100%; padding:8px; background:#fff; border:1px solid #ccc; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+  .media-row video { display:block; width:100%; height:auto; }
+  .media-row figcaption { margin-top:6px; font-size:0.87em; text-align:center; color:#444; }
+  .site-footer { margin-top:30px; padding-top:14px; border-top:1px solid #ccc; text-align:center; font-size:0.87em; color:#666; }
+  #projects + ul > li { margin-bottom: 24px; }
+  @media (max-width: 760px) {
+    body { font-size: 15px; width: 92%; margin: 20px auto; }
+    .media-row figure { width: 100%; }
+  }
 </style>
 <script data-id="a88f7746-35c3-4814-9e58-48ec6c0e9e2f" data-utcoffset="6" src="https://cdn.counter.dev/script.js"></script>
 </head>
@@ -26,30 +44,28 @@
 
 <div class="header-block">
 <img class="profile-pic" src="images/profile.jpg" alt="Issa Baddour" width="180" height="180">
-
-<b>Issa Baddour</b><br>
-PhD Candidate, Computer Science &amp; Engineering, IIT Jodhpur<br>
-<p>
-<a href="https://scholar.google.com/citations?user=Lo16oyMAAAAJ&hl=en" target="_blank">Google Scholar</a> ||
-<a href="https://www.linkedin.com/in/issabaddour/" target="_blank">LinkedIn</a> ||
-<a href="https://github.com/issabaddour" target="_blank">GitHub</a> ||
-<a href="https://orcid.org/0000-0002-9008-7861" target="_blank">ORCID</a>
-</p>
-<p>
-Email: <a href="mailto:baddour.1@iitj.ac.in">baddour.1@iitj.ac.in</a><br>
-Lab 203, CSE Department, IIT Jodhpur, India
-</p>
-<p>
+<h1 class="name">Issa Baddour</h1>
+<div class="affil">PhD Candidate, Computer Science &amp; Engineering<br>Indian Institute of Technology Jodhpur, India</div>
+<div class="advisors">
 Advised by <a href="https://somitra-sanadhya.github.io/" target="_blank">Prof. Somitra Kumar Sanadhya</a> and
 <a href="https://sites.google.com/site/dipsankarban/" target="_blank">Prof. Dip Sankar Banerjee</a>
-</p>
+</div>
+<div class="contact">
+<a href="mailto:baddour.1@iitj.ac.in">baddour.1@iitj.ac.in</a><br>
+Lab 203, CSE Department, IIT Jodhpur
+</div>
+<div class="links">
+<a href="https://scholar.google.com/citations?user=Lo16oyMAAAAJ&hl=en" target="_blank">Google Scholar</a>
+<a href="https://www.linkedin.com/in/issabaddour/" target="_blank">LinkedIn</a>
+<a href="https://github.com/issabaddour" target="_blank">GitHub</a>
+<a href="https://orcid.org/0000-0002-9008-7861" target="_blank">ORCID</a>
+</div>
 </div>
 
-<p>
+<p class="nav">
 <a href="#research">Research</a> |
 <a href="#publications">Publications</a> |
 <a href="#projects">Projects</a> |
-<a href="#security-recognition">Security</a> |
 <a href="#education">Education</a> |
 <a href="#teaching">Teaching</a> |
 <a href="#awards">Awards</a> |
@@ -73,7 +89,7 @@ Advised by <a href="https://somitra-sanadhya.github.io/" target="_blank">Prof. S
 <ul>
   <li><b>Microarchitectural layer:</b> Extended binary contention to four-level signaling on NVIDIA DGX A100. Achieved 44 Mbps (1 GPU) and 340 Mbps (8 GPUs). Behavioral randomization via SFU function combinations reduces ML detectability from 100% to 36%.</li>
   <li><b>Interconnect layer:</b> First study to expose NVLink contention across V100, A100, and H200. Covert channel: 6.33-9.90 Kbps with negligible error rates. Application fingerprinting via NVLink latency traces: 96.2% accuracy across 25 apps. Temporal and spatial partitioning countermeasures evaluated.</li>
-  <li><b>Application layer (LLM inference):</b> Unprivileged NVML telemetry alone reveals model identity and prompt semantics. Model fingerprinting: 100% at single-tenant, degrading to 83.8% under four-way contention. Prompt-family leakage significant in 18 of 35 tested cells. Telemetry-layer mitigations evaluated.</li>
+  <li><b>Application layer (LLM inference):</b> Side and covert channel attacks.</li>
 </ul>
 
 <hr>
@@ -89,32 +105,53 @@ Advised by <a href="https://somitra-sanadhya.github.io/" target="_blank">Prof. S
   <li>(2024) <b>Issa Baddour</b>, Somitra Kumar Sanadhya, Dip Sankar Banerjee, <i>SideLink: Exposing NVLink to Covert and Side-Channel Attacks</i> (Work-in-Progress), SPACE 2024
     <a href="https://link.springer.com/chapter/10.1007/978-3-031-80408-3_2" target="_blank">DOI</a>
   </li>
-  <li>(Under Review, EuroSys 2027) <b>Issa Baddour</b>, Somitra Kumar Sanadhya, Dip Sankar Banerjee, <i>Secret Serving: Covert Channels in Multi-Tenant LLM Serving Engines</i></li>
+  <li>(Submitted) <b>Issa Baddour</b>, Somitra Kumar Sanadhya, Dip Sankar Banerjee, <i>Covert Channels in Multi-Tenant LLM Serving Engines</i></li>
 </ul>
 
 <hr>
 
 <b id="projects">Research Projects</b>
 <ul>
-  <li><b>Execution-Level Covert Channels on GPUs</b> — 44 Mbps (1 GPU), 340 Mbps (8 GPUs), 36% ML detectability after evasion. Reverse-engineered warp/block scheduling on NVIDIA A100 to build a four-level covert signaling scheme with dynamic SFU randomization.
-    <a href="https://link.springer.com/article/10.1007/s41635-025-00170-0" target="_blank">Paper</a>
+  <li><b>Covert Channels in Multi-Tenant LLM Serving Engines</b> — Submitted.
+    <div class="media-row">
+      <figure>
+        <video src="resources/KVChannel_20261023_142607_alpha.webm" autoplay muted loop playsinline preload="metadata" aria-label="KV-Cache covert channel animation"></video>
+        <figcaption>KV-Cache Covert Channel</figcaption>
+      </figure>
+      <figure>
+        <video src="resources/QueueChannel_20261024_011153_alpha.webm" autoplay muted loop playsinline preload="metadata" aria-label="Batching Queue covert channel animation"></video>
+        <figcaption>Batching Queue Covert Channel</figcaption>
+      </figure>
+    </div>
   </li>
   <li><b>SideLink: NVLink Side-Channel &amp; Covert-Channel Attacks</b> — 6.33-9.90 Kbps covert channel, 96.2% app fingerprinting across V100/A100/H200. Proposed temporal and spatial partitioning countermeasures.
     <a href="https://link.springer.com/article/10.1007/s41635-026-00175-3" target="_blank">Journal</a> /
     <a href="https://link.springer.com/chapter/10.1007/978-3-031-80408-3_2" target="_blank">SPACE 2024</a>
+    <div class="media-row">
+      <figure>
+        <video src="resources/SideLinkHero_20261023_143200_alpha.webm" autoplay muted loop playsinline preload="metadata" aria-label="SideLink covert channel animation"></video>
+        <figcaption>SideLink Covert Channel</figcaption>
+      </figure>
+      <figure>
+        <video src="resources/SideLinkFingerprint_20261023_142607_alpha.webm" autoplay muted loop playsinline preload="metadata" aria-label="SideLink side channel animation"></video>
+        <figcaption>SideLink Side Channel</figcaption>
+      </figure>
+    </div>
   </li>
-  <li><b>Secret Serving: Covert Channels in Multi-Tenant LLM Serving Engines</b> — Under review, EuroSys 2027.</li>
+  <li><b>Execution-Level Covert Channels on GPUs</b> — 44 Mbps (1 GPU), 340 Mbps (8 GPUs), 36% ML detectability after evasion. Reverse-engineered warp/block scheduling on NVIDIA A100 to build a four-level covert signaling scheme with dynamic SFU randomization.
+    <a href="https://link.springer.com/article/10.1007/s41635-025-00170-0" target="_blank">Paper</a>
+    <div class="media-row">
+      <figure>
+        <video src="resources/FourLevel_20261022_022918_alpha.webm" autoplay muted loop playsinline preload="metadata" aria-label="Scaling the channel animation"></video>
+        <figcaption>Scaling the Channel</figcaption>
+      </figure>
+    </div>
+  </li>
   <li><b>FPGA-Accelerated SHA-256 Password Recovery via Partial Reconfiguration</b> — Graduate course project, IIT Jodhpur, 2021. Isolated length-independent logic into a static region to shrink the reconfigured area on the accelerator; implemented in VHDL, unit-tested in Vivado (design and simulation only; supervised by Dr. Somitra Sanadhya).</li>
 </ul>
 
 <hr>
 
-<b id="security-recognition">Security Research &amp; Recognition</b>
-<ul>
-  <li><b>Cyber Verification Program, Anthropic (2026):</b> Approved for dual-use cybersecurity research involving authorized penetration testing, red teaming, and bug bounty use cases.</li>
-</ul>
-
-<hr>
 
 <b id="education">Education</b>
 <ul>
@@ -158,6 +195,10 @@ Advised by <a href="https://somitra-sanadhya.github.io/" target="_blank">Prof. S
   <li>Conference participation — Indocrypt 2022/2023, SPACE 2024, Digital Forensics Conf. 2026</li>
   <li>Workshop participation — NWC 2023, NIWC 2026</li>
 </ul>
+
+<footer class="site-footer">
+  Last updated October 2026 &middot; &copy; 2026 Issa Baddour
+</footer>
 
 </body>
 </html>
